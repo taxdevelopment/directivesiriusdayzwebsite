@@ -163,5 +163,5 @@ export const config: Config = {
 export const authConfig = {
   loginButtonText: "Login with Discord",
   logoutButtonText: "Logout",
-  redirectAfterLogin: "/dashboard", // Seite nach Login
+  redirectAfterLogin: "/dashboard",
 };
