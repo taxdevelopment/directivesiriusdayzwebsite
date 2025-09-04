@@ -5,8 +5,8 @@ export const config: Config = {
   themeColor: "#5789f6",
   logoURL: "/images/logo.png",
   site: {
-    url: "https://www.skvad.eu/",
-    title: "SKVAD Community",
+    url: "N/A",
+    title: "Directive Sirius Community",
     twitter: {
       site: "@site",
       creator: "@creator",
@@ -14,7 +14,7 @@ export const config: Config = {
       images: [
         {
           url: "/images/marketing/banner.png",
-          alt: "Marketing Banner for SKVAD Community",
+          alt: "Marketing Banner for Directive Sirius Community",
         },
       ],
     },
@@ -94,18 +94,18 @@ export const config: Config = {
       ipv4: '172.96.164.35',
       gamePort: 2332,
       steamQueryPort: 27016,
-      cftoolsApiId: '7732f152-3b6b-4da5-9356-b43ebfef2012',
+      cftoolsApiId: '',
     },
     // {
-    //   name: 'SKVAD EU2',
-    //   ipv4: '193.25.252.24',
+    //   name: 'Directive Sirius US2',
+    //   ipv4: '',
     //   gamePort: 2302,
     //   steamQueryPort: 27016,
     //   cftoolsApiId: '40dfcdf1-2e38-4a86-8b36-f02e4c868bf5',
     // },
     // {
-    //   name: 'SKVAD EU3',
-    //   ipv4: '193.25.252.24',
+    //   name: 'Directive Sirius US3',
+    //   ipv4: '',
     //   gamePort: 2402,
     //   steamQueryPort: 27017,
     //   cftoolsApiId: '16c3c8d1-9e15-4729-a541-8a578288e43d',
@@ -121,11 +121,11 @@ export const config: Config = {
     },
   },
   footer: {
-    trademarkNotice: "The DayZ logo is a registered trademark of Bohemia Interactive a.s. SKVAD is not affiliated with Bohemia Interactive a.s. or DayZ. All other trademarks are the property of their respective owners.",
-    brandingName: "SKVAD Community",
+    trademarkNotice: "The DayZ logo is a registered trademark of Bohemia Interactive a.s. Directive Sirius is not affiliated with Bohemia Interactive a.s. or DayZ. All other trademarks are the property of their respective owners.",
+    brandingName: "Directive Sirius Community",
     brandingURL: '/',
     initialCopyrightYear: 2021,
-    copyrightBrandName: "SKVAD",
+    copyrightBrandName: "Directive Sirius",
     copyrightBrandUrl: '/',
     links: [
       {
