@@ -138,11 +138,11 @@ export const config: Config & { features: Record<string, boolean> } = {
   // Feature toggles: Enable or disable sections easily
   features: {
     hero: true,
-    servers: true,
-    cftools: true,
-    leaderboard: true,
+    servers: false,
+    cftools: false,
+    leaderboard: false,
     aboutSection: true,
-    contactSection: true,
+    contactSection: false,
   },
 };
 
