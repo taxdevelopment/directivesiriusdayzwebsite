@@ -13,6 +13,7 @@ import HeaderLoginButton from "./HeaderLoginButton";
 export const defaultNavigation = {
   items: config.navigation?.items ?? [
     { label: "About", href: "#about", enabled: true },
+    { label: "Store", href: "/store", enabled: true },
     // { label: "Servers", href: "#servers", enabled: true },
     // { label: "Leaderboard", href: "#leaderboard", enabled: config.cftools.leaderboard.enabled },
     // { label: "Contact", href: "#contact", enabled: true },
