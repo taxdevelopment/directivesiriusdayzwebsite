@@ -5,7 +5,7 @@ import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import React, { MouseEvent } from 'react';
 
 export default function SpotlightBackgroundContent({
-  color = 'rgba(14, 165, 233, 0.1)',
+  color = 'rgba(127, 14, 232, 0.49)',
   children,
   className,
   wrapperClassName,
