@@ -10,7 +10,15 @@ const handler = NextAuth({
   ],
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "/login", // optional
+    signIn: "/", // optional, falls man manuell auf SignIn-Seite geht
+    signOut: "/", // wird auf / geleitet
+    error: "/",   // bei Fehler ebenfalls zurück zur Startseite
+  },
+  callbacks: {
+    async redirect({ url, baseUrl }) {
+      // Immer auf Startseite weiterleiten
+      return baseUrl;
+    },
   },
 });
 
