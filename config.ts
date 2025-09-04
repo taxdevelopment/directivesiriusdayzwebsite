@@ -2,7 +2,7 @@ import { Config } from './src/lib/config.types';
 
 export const config: Config = {
   runtime: 'nodejs',
-  themeColor: "#5789f6",
+  themeColor: "#3e7979",
   logoURL: "/images/logo.png",
   site: {
     url: "https://dayz-community-template-olive.vercel.app/",
@@ -26,7 +26,7 @@ export const config: Config = {
       sections: {
         network: {
           title: "Server Network",
-          description: "Our DayZ servers are hosted in Europe and are maintained by our dedicated team of developers and system administrators.",
+          description: "Our DayZ servers are hosted by [PROVIDER].",
         },
         about: {
           title: "About Us",
@@ -74,10 +74,10 @@ export const config: Config = {
     },
   },
   hero: {
-    title: "We listen, we learn, we deliver.",
-    description: "Our DayZ Community is built on the principles of transparency, integrity, and trust. We are committed to providing the best experience for our players. Wether you are a seasoned veteran or a new player, we have a place for you.",
+    title: "Survive the wasteland!",
+    description: "Your actions dictate your rise. Whether you become an Adherent, Acolyte, or Herald, the path begins here",
     background: {
-      color: 'rgb(51 65 85)',
+      color: 'rgb(62, 121, 121)',
       image: {
         url: "/images/hero.jpg",
         alt: "Hero Image",
@@ -89,13 +89,13 @@ export const config: Config = {
     },
   },
   servers: [
-    {
-      name: 'Directive Sirius US1',
-      ipv4: '172.96.164.35',
-      gamePort: 2332,
-      steamQueryPort: 27016,
-      cftoolsApiId: '',
-    },
+    // {
+    //   name: 'Directive Sirius US1',
+    //   ipv4: '172.96.164.35',
+    //   gamePort: 2332,
+    //   steamQueryPort: 27016,
+    //   cftoolsApiId: '',
+    // },
     // {
     //   name: 'Directive Sirius US2',
     //   ipv4: '',
@@ -111,15 +111,15 @@ export const config: Config = {
     //   cftoolsApiId: '16c3c8d1-9e15-4729-a541-8a578288e43d',
     // },
   ],
-  cftools: {
-    leaderboard: {
-      enabled: true,
-      defaultSortValue: 'kills',
-      allowedSortValues: ['kills', 'deaths', 'kdratio', 'longest_kill', 'longest_shot', 'playtime', 'suicides'],
-      blacklistedCFToolsIds: [],
-      showAmount: 100,
-    },
-  },
+  // cftools: {
+  //   // leaderboard: {
+  //   //   enabled: true,
+  //   //   defaultSortValue: 'kills',
+  //   //   allowedSortValues: ['kills', 'deaths', 'kdratio', 'longest_kill', 'longest_shot', 'playtime', 'suicides'],
+  //   //   blacklistedCFToolsIds: [],
+  //   //   showAmount: 100,
+  //   // },
+  // },
   footer: {
     trademarkNotice: "The DayZ logo is a registered trademark of Bohemia Interactive a.s. Directive Sirius is not affiliated with Bohemia Interactive a.s. or DayZ. All other trademarks are the property of their respective owners.",
     brandingName: "Directive Sirius Community",
@@ -131,30 +131,6 @@ export const config: Config = {
       {
         url: '#',
         label: 'About',
-      },
-      {
-        url: '#',
-        label: 'Meet the Team',
-      },
-      {
-        url: '#',
-        label: 'Campaigns',
-      },
-      {
-        url: '#',
-        label: 'Blog',
-      },
-      {
-        url: '#',
-        label: 'Affiliate Program',
-      },
-      {
-        url: '#',
-        label: 'FAQs',
-      },
-      {
-        url: '#',
-        label: 'Contact',
       },
     ],
   },
