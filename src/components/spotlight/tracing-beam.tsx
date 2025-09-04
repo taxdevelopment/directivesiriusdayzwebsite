@@ -100,7 +100,7 @@ export const TracingBeam = ({
           <motion.path
             d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${svgHeight}`}
             fill="none"
-            stroke="#9091A0"
+            stroke="#855296ff"
             strokeOpacity="0.16"
             transition={{
               duration: 10,

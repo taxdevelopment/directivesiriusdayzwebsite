@@ -5,8 +5,8 @@ import React from 'react';
 
 const WorldSVG = ({
   className,
-  primaryColor = '#0F354F',
-  animateValues = '#0e3049;#134770;#0e3049',
+  primaryColor = '#2d0f4fff',
+  animateValues = '#2d0f4fff;#4c1370;#320e4a',
   // animateValues = `${primaryColor}/05;${primaryColor}/75;${primaryColor}/50`,
 }: {
   className?: string;
