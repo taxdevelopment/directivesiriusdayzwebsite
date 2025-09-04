@@ -1,31 +1,28 @@
 "use client";
 
 import { signIn, signOut, useSession } from "next-auth/react";
+import { authConfig } from "../../config";
 
 export default function HeaderLoginButton() {
   const { data: session } = useSession();
 
-  const loginButtonText = "Login with Discord";
-  const logoutButtonText = "Logout";
-  const redirectAfterLogin = "/dashboard"; // Zielseite nach Login
-
   if (session) {
     return (
       <button
-        onClick={() => signOut({ callbackUrl: "/" })}
+        onClick={() => signOut({ callbackUrl: authConfig.redirectAfterLogin })}
         className="px-4 py-2 rounded bg-red-500 text-white hover:bg-red-600"
       >
-        {logoutButtonText}
+        {authConfig.logoutButtonText}
       </button>
     );
   }
 
   return (
     <button
-      onClick={() => signIn("discord", { callbackUrl: redirectAfterLogin })}
+      onClick={() => signIn("discord", { callbackUrl: authConfig.redirectAfterLogin })}
       className="px-4 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-700"
     >
-      {loginButtonText}
+      {authConfig.loginButtonText}
     </button>
   );
 }
