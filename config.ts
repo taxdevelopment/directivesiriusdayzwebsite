@@ -21,8 +21,8 @@ export const config: Config = {
   },
   pages: {
     home: {
-      title: "Home | SKVAD Community",
-      description: "Welcome to the SKVAD Community! We are a DayZ community that is dedicated to providing the best experience for our players. Join us today!",
+      title: "Home | Directive Sirius Community",
+      description: "Welcome to the Directive Sirius Community! We are a DayZ community that is dedicated to providing the best experience for our players. Join us today!",
       sections: {
         network: {
           title: "Server Network",
@@ -66,8 +66,8 @@ export const config: Config = {
           title: "Contact Us",
           description: "If you have any questions or concerns, please don't hesitate to contact us through the following channels.",
           links: {
-            'Discord': "https://discord.gg/skvad",
-            'Email': "mailto:info@skvad.eu",
+            'Discord': "N/A",
+            'Email': "N/A",
           },
         },
       },
@@ -90,26 +90,26 @@ export const config: Config = {
   },
   servers: [
     {
-      name: 'SKVAD EU1',
-      ipv4: '193.25.252.92',
-      gamePort: 2302,
+      name: 'Directive Sirius US1',
+      ipv4: '172.96.164.35',
+      gamePort: 2332,
       steamQueryPort: 27016,
       cftoolsApiId: '7732f152-3b6b-4da5-9356-b43ebfef2012',
     },
-    {
-      name: 'SKVAD EU2',
-      ipv4: '193.25.252.24',
-      gamePort: 2302,
-      steamQueryPort: 27016,
-      cftoolsApiId: '40dfcdf1-2e38-4a86-8b36-f02e4c868bf5',
-    },
-    {
-      name: 'SKVAD EU3',
-      ipv4: '193.25.252.24',
-      gamePort: 2402,
-      steamQueryPort: 27017,
-      cftoolsApiId: '16c3c8d1-9e15-4729-a541-8a578288e43d',
-    },
+    // {
+    //   name: 'SKVAD EU2',
+    //   ipv4: '193.25.252.24',
+    //   gamePort: 2302,
+    //   steamQueryPort: 27016,
+    //   cftoolsApiId: '40dfcdf1-2e38-4a86-8b36-f02e4c868bf5',
+    // },
+    // {
+    //   name: 'SKVAD EU3',
+    //   ipv4: '193.25.252.24',
+    //   gamePort: 2402,
+    //   steamQueryPort: 27017,
+    //   cftoolsApiId: '16c3c8d1-9e15-4729-a541-8a578288e43d',
+    // },
   ],
   cftools: {
     leaderboard: {
