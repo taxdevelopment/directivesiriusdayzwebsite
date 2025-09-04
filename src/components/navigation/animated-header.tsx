@@ -62,7 +62,7 @@ export default function Header({
             style={{
               opacity: useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0]),
             }}
-            className="hidden sm:flex space-x-4 text-sm font-medium text-slate-400 duration-300"
+            className="hidden sm:flex space-x-4 text-sm font-medium text-purple-400 duration-300"
           >
             {items.map((item, index) => (
               <Link key={index} href={item.href} className='font-bold hover:text-primary duration-300'>

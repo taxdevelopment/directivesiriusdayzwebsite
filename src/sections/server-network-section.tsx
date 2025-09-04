@@ -104,7 +104,7 @@ const ServerNetworkSection = async () => {
 
       <WorldSVG className={cn(
         'w-auto h-[85%] max-w-full mx-auto absolute z-[-1] p-4',
-        'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
+        'top-1/2 left-1/2 transform -tranpurple-x-1/2 -tranpurple-y-1/2',
         'opacity-75',
       )} />
       <h2 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
