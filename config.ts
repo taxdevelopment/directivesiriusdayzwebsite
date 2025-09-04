@@ -9,7 +9,7 @@ export const config: Config & { features: Record<string, boolean> } = {
   features: {
     hero: true,
     aboutSection: true,
-    servers: true,
+    servers: false,
     cftools: false,
     contactSection: false,
     leaderboard: false,
@@ -36,9 +36,9 @@ export const config: Config & { features: Record<string, boolean> } = {
           title: "About Us",
           description: "We are a DayZ community...",
           rows: {
-            1: { title: "Events", description: "We host events.", image: { url: "/images/about/events.jpg", alt: "Events" } },
-            2: { title: "Community", description: "We foster community.", image: { url: "/images/about/community.jpg", alt: "Community" } },
-            3: { title: "Development", description: "Our team improves the server.", image: { url: "/images/about/development.png", alt: "Development" } },
+            1: { title: "Events", description: "Our server hosts a wide variety of events to keep the gameplay exciting and engaging. From server-driven activities like King of the Hill (KOTH) and dynamic airdrops to special events organized by our admins, such as Bandit Camps and community challenges, there’s always something happening to test your skills and bring players together.", image: { url: "/images/about/events.jpg", alt: "Events" } },
+            2: { title: "Community", description: "Our community is made up of passionate DayZ players who share a love for survival, teamwork, and adventure. We strive to create a friendly, inclusive, and engaging environment where both new and veteran players can enjoy the game, participate in events, and connect with like-minded survivors.", image: { url: "/images/about/community.jpg", alt: "Community" } },
+            3: { title: "Development", description: "Our dev team is always improving the server, adding new features, and responding to player feedback to keep the world dynamic and immersive.", image: { url: "/images/about/development.png", alt: "Development" } },
           },
         },
         leaderboard: { title: "Leaderboard", description: "Top players overview" },
