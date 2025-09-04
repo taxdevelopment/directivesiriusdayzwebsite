@@ -5,7 +5,7 @@ export const config: Config = {
   themeColor: "#5789f6",
   logoURL: "/images/logo.png",
   site: {
-    url: "N/A",
+    url: "https://dayz-community-template-olive.vercel.app/",
     title: "Directive Sirius Community",
     twitter: {
       site: "@site",
