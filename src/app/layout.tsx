@@ -1,3 +1,5 @@
+"use client";
+
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { config } from '../../config';
@@ -6,6 +8,7 @@ import { fontSans } from '@/lib/fonts';
 import { ThemeProvider } from '@/components/theme/theme-provider';
 import Header from '@/components/navigation/animated-header';
 import Footer from '@/components/footer/footer';
+import { SessionProvider } from "next-auth/react";
 
 export const runtime = config.runtime;
 
@@ -51,9 +54,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(
@@ -67,14 +68,16 @@ export default function RootLayout({
           disableTransitionOnChange
           forcedTheme='dark'
         >
-          <div className="flex min-h-screen flex-col">
-            <div id="anchor-top" aria-hidden />
-            <Header />
-            <div className="flex flex-1 flex-grow items-center justify-center relative">
-              {children}
+          <SessionProvider>
+            <div className="flex min-h-screen flex-col">
+              <div id="anchor-top" aria-hidden />
+              <Header />
+              <div className="flex flex-1 flex-grow items-center justify-center relative">
+                {children}
+              </div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
+          </SessionProvider>
         </ThemeProvider>
       </body>
     </html>
