@@ -15,6 +15,20 @@ import Link from 'next/link';
 import MobileNav from './mobile-nav';
 import { cn } from '@/lib/utils';
 
+import HeaderLoginButton from "./HeaderLoginButton";
+
+export default function Header() {
+  return (
+    <header className="flex justify-between items-center p-4 bg-gray-900 text-white">
+      <h1 className="text-xl font-bold">DayZ Community</h1>
+      <nav className="flex items-center gap-4">
+        {/* andere Links */}
+        <HeaderLoginButton />
+      </nav>
+    </header>
+  );
+}
+
 export const defaultNavigation = {
   items: config.navigation?.items ?? [
     { label: "About", href: "#about", enabled: true },
