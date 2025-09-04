@@ -84,8 +84,8 @@ export const config: Config = {
       },
     },
     cta: {
-      label: "Join us today!",
-      href: "https://discord.gg/mirasaki",
+      label: "Join our Discord!",
+      href: "https://discord.gg/CYx965keUH",
     },
   },
   servers: [
