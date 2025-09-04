@@ -1,7 +1,7 @@
-import NextAuth, { type NextAuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
 
-export const authOptions: NextAuthOptions = {
+const handler = NextAuth({
   providers: [
     DiscordProvider({
       clientId: process.env.DISCORD_CLIENT_ID!,
@@ -10,18 +10,17 @@ export const authOptions: NextAuthOptions = {
   ],
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "/", // optional
-    signOut: "/", // optional
-    error: "/",   // optional
+    signIn: "/",
+    signOut: "/",
+    error: "/",
   },
   callbacks: {
-    async redirect({ url, baseUrl }) {
-      // Immer auf die Startseite weiterleiten
+    async redirect({ baseUrl }) {
+      // Immer auf Startseite weiterleiten
       return baseUrl;
     },
   },
-};
+});
 
-const handler = NextAuth(authOptions);
-
+// Für App-Router muss man explizit GET/POST exportieren
 export { handler as GET, handler as POST };
