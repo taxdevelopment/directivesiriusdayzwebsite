@@ -76,7 +76,7 @@ const LeaderboardTable = ({
           );
         })}
       </TableBody>
-      <TableFooter className='sticky bottom-0 bg-slate-800'>
+      <TableFooter className='sticky bottom-0 bg-purple-800'>
         <TableRow>
           <TableCell colSpan={3}>Total</TableCell>
           <TableCell className='text-right'>
