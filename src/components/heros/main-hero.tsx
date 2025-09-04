@@ -49,7 +49,7 @@ const MainHero = () => {
           <h2 className='mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl'>
             {config.hero.title}
           </h2>
-          <p className='mb-6 font-light text-gray-400 lg:mb-8 md:text-lg lg:text-xl'>
+          <p className='mb-6 font-light text-purple-400 lg:mb-8 md:text-lg lg:text-xl'>
             {config.hero.description}
           </p>
           <LinkButton

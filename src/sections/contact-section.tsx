@@ -15,11 +15,11 @@ const ContactSection = () => {
       )}
       id='contact'
     >
-      <h2 className='mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white text-center'>
+      <h2 className='mb-4 text-4xl font-bold tracking-tight text-purple-900 dark:text-white text-center'>
         {config.pages.home.sections.contact.title}
       </h2>
 
-      <p className='mb-6 text-lg font-normal text-gray-700 dark:text-gray-400 text-center max-w-xl mx-auto'>
+      <p className='mb-6 text-lg font-normal text-purple-700 dark:text-purple-400 text-center max-w-xl mx-auto'>
         {config.pages.home.sections.contact.description}
       </p>
 

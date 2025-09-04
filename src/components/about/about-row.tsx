@@ -37,10 +37,10 @@ const AboutRow = ({
         'mt-4 md:mt-0 flex flex-col items-center md:items-start text-center md:text-start',
         contentClassName,
       )}>
-        <h3 className='mb-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white'>
+        <h3 className='mb-4 text-3xl tracking-tight font-extrabold text-purple-900 dark:text-white'>
           {title}
         </h3>
-        <p className='md:mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400'>
+        <p className='md:mb-6 font-light text-purple-500 md:text-lg dark:text-purple-400'>
           {description}
         </p>
       </div>

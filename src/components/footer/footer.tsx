@@ -5,11 +5,11 @@ import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <footer className='pb-2 px-4 md:px-8 pt-4 md:pt-8 bg-white dark:bg-gray-800'>
+    <footer className='pb-2 px-4 md:px-8 pt-4 md:pt-8 bg-white dark:bg-purple-800'>
       <div className='mx-auto max-w-screen-xl text-center'>
         <Link
           href={config.footer.brandingURL ?? '#'}
-          className='flex justify-center items-center gap-2 text-2xl font-semibold text-gray-900 dark:text-white'
+          className='flex justify-center items-center gap-2 text-2xl font-semibold text-purple-900 dark:text-white'
         >
           <Image
             src={config.logoURL}
@@ -19,7 +19,7 @@ const Footer = () => {
           />
           {config.footer.brandingName ?? config.site.title}
         </Link>
-        <ul className='my-6 flex flex-wrap justify-center items-center text-gray-900 dark:text-white'>
+        <ul className='my-6 flex flex-wrap justify-center items-center text-purple-900 dark:text-white'>
           {config.footer.links?.map((link, index) => (
             <li key={index}>
               <Link
@@ -33,7 +33,7 @@ const Footer = () => {
             </li>
           ))}
         </ul>
-        <span className='text-sm text-gray-500 sm:text-center dark:text-gray-400'>
+        <span className='text-sm text-purple-500 sm:text-center dark:text-purple-400'>
           © {
             !config.footer.initialCopyrightYear || config.footer.initialCopyrightYear === new Date().getFullYear()
               ? new Date().getFullYear()
@@ -47,7 +47,7 @@ const Footer = () => {
           </Link>
           . All Rights Reserved.
         </span>
-        <div className="text-center text-gray-500 sm:text-center dark:text-gray-400">
+        <div className="text-center text-purple-500 sm:text-center dark:text-purple-400">
           Created with ❤️ by <Link
             href={'https://mirasaki.dev'}
             className='hover:underline hover:text-white'
@@ -55,7 +55,7 @@ const Footer = () => {
             rel='noopener noreferrer'
           >Mirasaki Development</Link>
         </div>
-        <p className='my-2 text-gray-500 dark:text-gray-400 text-sm max-w-xl mx-auto'>
+        <p className='my-2 text-purple-500 dark:text-purple-400 text-sm max-w-xl mx-auto'>
           {config.footer.trademarkNotice}
         </p>
       </div>

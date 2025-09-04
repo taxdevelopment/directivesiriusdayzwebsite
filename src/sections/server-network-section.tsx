@@ -63,7 +63,7 @@ export const ServerCard = async ({
 
   return (
     <div className={cn(
-      'max-w-sm p-6 bg-white/[5%] backdrop-blur border border-gray-200 rounded-lg shadow  dark:border-gray-700',
+      'max-w-sm p-6 bg-white/[5%] backdrop-blur border border-purple-200 rounded-lg shadow  dark:border-purple-700',
       'sm:w-[270px]', // Minimal supported resolution of 280px
       className,
     )}>
@@ -72,12 +72,12 @@ export const ServerCard = async ({
           'h-6 w-6 rounded-full shrink-0',
           serverData ? 'bg-green-400' : 'bg-red-400'
          )} />
-        <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h3 className="mb-2 text-2xl font-bold tracking-tight text-purple-900 dark:text-white">
           {server.name}
           {!serverData && ' (Offline)'}
         </h3>
       </div>
-      <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <p className="mb-3 font-normal text-purple-700 dark:text-purple-400">
         {data?.error && <span className='text-red-500'>Error: {data.error}</span>}
         {!data?.error && <>
           Players: {serverData?.players ?? 0}/{serverData?.max_players ?? 0}
@@ -107,11 +107,11 @@ const ServerNetworkSection = async () => {
         'top-1/2 left-1/2 transform -tranpurple-x-1/2 -tranpurple-y-1/2',
         'opacity-75',
       )} />
-      <h2 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
+      <h2 className="mb-4 text-4xl font-bold tracking-tight text-purple-900 dark:text-white text-center">
         {config.pages.home.sections.network.title}
       </h2>
 
-      <p className="mb-6 text-lg font-normal text-gray-700 dark:text-gray-400 text-center max-w-xl mx-auto">
+      <p className="mb-6 text-lg font-normal text-purple-700 dark:text-purple-400 text-center max-w-xl mx-auto">
         {config.pages.home.sections.network.description}
       </p>
 
