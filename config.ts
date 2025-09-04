@@ -2,7 +2,7 @@ import { Config } from './src/lib/config.types';
 
 export const config: Config & { features: Record<string, boolean> } = {
   runtime: 'nodejs',
-  themeColor: "#3e7979",
+  themeColor: "#6800cc",
   logoURL: "/images/logo.png",
 
   // Feature-Toggles
@@ -50,7 +50,7 @@ export const config: Config & { features: Record<string, boolean> } = {
   hero: {
     title: "Survive the wasteland!",
     description: "Your actions dictate your rise.",
-    background: { color: 'rgb(62, 121, 121)', image: { url: "/images/hero.jpg", alt: "Hero Image" } },
+    background: { color: 'rgb(104, 0, 204)', image: { url: "/images/hero.jpg", alt: "Hero Image" } },
     cta: { label: "Join our Discord!", href: "https://discord.gg/CYx965keUH" },
   },
 

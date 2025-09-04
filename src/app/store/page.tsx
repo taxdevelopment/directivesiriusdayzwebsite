@@ -1,4 +1,4 @@
-import { config } from '../../config';
+import { config } from '../../../config';
 import { useRouter } from 'next/navigation'; // Next.js 13+ app router
 
 export default function StorePage() {
