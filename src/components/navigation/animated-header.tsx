@@ -41,7 +41,7 @@ export default function Header({
       <motion.header
         style={{
           height: useTransform(scrollYBoundedProgressDelayed, [0, 1], [80, 50]),
-          backgroundColor: useMotionTemplate`rgb(2 6 23 / ${useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0.1])})`,
+          backgroundColor: useMotionTemplate`rgb(39 8 61 / ${useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0.1])})`,
           borderBottomColor: config.themeColor,
           borderBottomWidth: useTransform(scrollYBoundedProgressDelayed, [0, 1], [3, 1]),
         }}
