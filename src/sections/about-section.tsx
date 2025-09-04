@@ -20,11 +20,11 @@ const AboutSection = () => {
         )}
         id='about'
       >
-        <h2 className='mb-4 text-4xl font-bold tracking-tight text-purple-900 dark:text-white text-center'>
+        <h2 className='mb-4 text-4xl font-bold tracking-tight text-slate-900 dark:text-white text-center'>
           {config.pages.home.sections.about.title}
         </h2>
 
-        <p className='mb-6 text-lg font-normal text-purple-700 dark:text-purple-400 text-center max-w-xl mx-auto'>
+        <p className='mb-6 text-lg font-normal text-slate-700 dark:text-slate-400 text-center max-w-xl mx-auto'>
           {config.pages.home.sections.about.description}
         </p>
 
