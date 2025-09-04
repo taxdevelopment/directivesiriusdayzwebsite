@@ -1,7 +1,7 @@
 "use client";
 
 import { signIn, signOut, useSession } from "next-auth/react";
-import { authConfig } from "../../config";
+import { authConfig } from '../../../config';
 
 export default function HeaderLoginButton() {
   const { data: session } = useSession();
