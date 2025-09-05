@@ -41,7 +41,7 @@ const AboutSection = () => {
               description={config.pages.home.sections.about.rows[2].description}
               imageURL={config.pages.home.sections.about.rows[2].image.url}
               imageAlt={config.pages.home.sections.about.rows[2].image.alt}
-              className={cn('md:flex-row-reverse', 'rounded-lg overflow-hidden shadow-lg')}
+              className={cn('md:flex-row-reverse', 'rounded-xl w-full h-auto')}
               contentClassName='md:text-end md:items-end'
             />
             <AboutRow
