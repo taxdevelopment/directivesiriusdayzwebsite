@@ -5,13 +5,12 @@ import { Zap, Gift } from 'lucide-react';
 
 const products = [
   {
-    id: 'vip-month',
-    name: 'VIP 1 Month',
-    badge: 'VIP',
+    id: 'priority',
+    name: 'Priority Queue 1 Month',
+    badge: 'Priority',
     price: 14.99,
     features: [
       'Priority queue access (30 days)',
-      'VIP Discord role',
       'Instant delivery',
     ],
     icon: Zap,
@@ -20,7 +19,7 @@ const products = [
     id: 'vip-lifetime',
     name: 'Lifetime VIP',
     badge: 'VIP',
-    price: 149.99,
+    price: 69.99,
     features: [
       'Lifetime priority access',
       'VIP Discord role',
@@ -33,21 +32,22 @@ const products = [
     id: 'custom-skin',
     name: 'Custom Weapon Skin',
     badge: 'Skin',
-    price: 9.99,
+    price: 24.99,
     features: [
-      'Redeemable unique weapon skin',
-      'No expiry',
+      'PLEASE OPEN TICKET BEFORE PURCHASE',
+      'Custome Weapon Skin',
     ],
     icon: Gift,
   },
 ];
 
 export default function StorePage() {
-  const [activeTab, setActiveTab] = useState<'all' | 'vip' | 'skins'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'priority' | 'vip' | 'skins'>('all');
 
   const filteredProducts = products.filter((p) => {
     if (activeTab === 'vip') return p.badge === 'VIP';
     if (activeTab === 'skins') return p.badge === 'Skin';
+    if (activeTab === 'priority') return p.badge === 'Priority';
     return true;
   });
 
