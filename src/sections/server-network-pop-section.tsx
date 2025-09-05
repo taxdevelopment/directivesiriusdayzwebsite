@@ -1,14 +1,15 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { CheckCircle, XCircle, Server } from 'lucide-react';
+import { CheckCircle, XCircle, Server as ServerIcon } from 'lucide-react';
 
-interface ServerData {
-  host: string;
-  port?: number;
-  type: string;
-  online: boolean;
-  players?: any[];
+export interface ServerData {
+  id: string;         // Unique server id
+  name: string;       // Server name
+  host: string;       // IP
+  port?: number;      // Port (optional)
+  online: boolean;    // Online status
+  players?: { current: number; max: number };
 }
 
 export default function ServerNetworkPopSection() {
@@ -17,16 +18,17 @@ export default function ServerNetworkPopSection() {
 
   const fetchServers = async () => {
     try {
-      const res = await fetch('/api/servers');
+      const res = await fetch('/api/servers'); // This endpoint should return your servers with live online/player info
+      if (!res.ok) throw new Error('Failed to fetch servers');
       const data: ServerData[] = await res.json();
       setServers(data);
     } catch (err) {
-      console.error('Failed to fetch servers:', err);
+      console.error('Error fetching servers:', err);
     }
   };
 
   useEffect(() => {
-    fetchServers(); // initial fetch
+    fetchServers(); // Initial fetch
     const interval = setInterval(fetchServers, refreshInterval);
     return () => clearInterval(interval);
   }, []);
@@ -37,24 +39,17 @@ export default function ServerNetworkPopSection() {
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {servers.map((server) => (
           <div
-            key={`${server.host}:${server.port}`}
+            key={server.id}
             className="rounded-2xl p-6 shadow bg-neutral-900 border border-neutral-800 flex flex-col items-center"
           >
-            <Server className="h-10 w-10 mb-4 text-brand-light" />
-            <h3 className="text-2xl font-bold text-center mb-2">{server.host}</h3>
-            <p className="text-sm text-neutral-400 mb-4">
-              {server.online ? 'Online' : 'Offline'}
+            <ServerIcon className="h-10 w-10 mb-4 text-brand-light" />
+            <h3 className="text-2xl font-bold text-center mb-1">{server.name}</h3>
+            <p className="text-sm text-neutral-400 mb-2">
+              {server.host}{server.port ? `:${server.port}` : ''}
             </p>
-            <div className="flex items-center gap-2 mb-4">
-              {server.online ? (
-                <CheckCircle className="text-green-500 w-6 h-6" />
-              ) : (
-                <XCircle className="text-red-500 w-6 h-6" />
-              )}
-              <span className="text-white font-medium">
-                {server.online ? `${server.players?.length || 0} Players` : '0 Players'}
-              </span>
-            </div>
+            <p className="text-sm text-neutral-300 mb-4">
+              Players: {server.players?.current ?? 0} / {server.players?.max ?? 0}
+            </p>
             <button
               className={`w-full py-2 rounded-xl text-white font-semibold transition ${
                 server.online ? 'bg-green-600 hover:bg-green-500' : 'bg-red-600 cursor-not-allowed'

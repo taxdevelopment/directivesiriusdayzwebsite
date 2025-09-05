@@ -1,23 +1,27 @@
 import { NextResponse } from 'next/server';
-import { query as gamedigQuery } from 'gamedig';
+import Gamedig from 'gamedig';
+
+const SERVERS = [
+  { id: 'server1', name: 'Directive DayZ Server US1', host: 'N/A', port: 2302 },
+  { id: 'server2', name: 'Directive DayZ Server US2', host: 'N/A', port: 2302 },
+];
 
 export async function GET() {
-  const servers = [
-    { host: 'YOUR_SERVER_IP', port: 2302, type: 'dayz' },
-    // weitere Server hier
-  ];
-
   const results = await Promise.all(
-    servers.map(async (server) => {
+    SERVERS.map(async (s) => {
       try {
-        const data = await gamedigQuery({
-          type: server.type,
-          host: server.host,
-          port: server.port,
+        const state = await Gamedig.query({
+          type: 'dayz',
+          host: s.host,
+          port: s.port,
         });
-        return { ...server, online: true, players: data.players };
+        return {
+          ...s,
+          online: true,
+          players: { current: state.players.length, max: state.maxplayers },
+        };
       } catch (err) {
-        return { ...server, online: false, players: [] };
+        return { ...s, online: false, players: { current: 0, max: 0 } };
       }
     })
   );
