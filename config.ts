@@ -78,7 +78,7 @@ export const config: Config & { features: Record<string, boolean> } = {
   copyrightBrandName: "Directive Sirius",
   copyrightBrandUrl: '/',
   links: [
-    { url: '#', label: 'About' }, // bestehender Link bleibt
+    { url: '/', label: 'Home' }, // bestehender Link bleibt
     { url: '/legal/terms', label: 'Terms of Service' },
     { url: '/legal/privacy', label: 'Privacy Policy' },
     { url: '/legal/fulfillment', label: 'Fulfillment Policy' },
