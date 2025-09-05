@@ -24,7 +24,7 @@ const AboutRow = ({
       className
     )}>
       <Image
-        className='max-w-[500px] w-full rounded'
+        className='max-w-[500px] w-full rounded-xl'
         src={imageURL}
         alt={imageAlt}
         height={200}
