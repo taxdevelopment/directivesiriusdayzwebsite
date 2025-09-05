@@ -1,64 +1,84 @@
 'use client';
 
 import { useState } from 'react';
-import { Zap, Gift } from 'lucide-react';
+import { Zap, Sparkle, Brush } from 'lucide-react';
 
 const products = [
   {
-    id: 'priority',
+    id: 'priority-1m',
     name: 'Priority Queue 1 Month',
     badge: 'Priority',
     price: 14.99,
-    features: [
-      'Priority queue access (30 days)',
-      'Instant delivery',
-    ],
+    features: ['Priority queue access (30 days)', 'Instant delivery'],
     icon: Zap,
   },
   {
-    id: 'priority2',
+    id: 'priority-3m',
     name: 'Priority Queue 3 Month',
     badge: 'Priority',
     price: 39.99,
-    features: [
-      'Priority queue access (90 days)',
-      'Instant delivery',
-    ],
+    features: ['Priority queue access (90 days)', 'Instant delivery'],
     icon: Zap,
   },
   {
     id: 'vip-lifetime',
-    name: 'Lifetime VIP',
+    name: 'VIP Lifetime',
     badge: 'VIP',
     price: 69.99,
-    features: [
-      'Lifetime priority access',
-      'VIP Discord role',
-      'Instant delivery',
-    ],
-    icon: Zap,
+    features: ['Lifetime VIP access', 'VIP Discord role', 'Instant delivery'],
+    icon: Sparkle,
     popular: true,
   },
   {
-    id: 'custom-skin',
+    id: 'custom-weapon-skin',
     name: 'Custom Weapon Skin',
     badge: 'Skin',
     price: 24.99,
-    features: [
-      'PLEASE OPEN TICKET BEFORE PURCHASE',
-      'Custome Weapon Skin',
-    ],
-    icon: Gift,
+    features: ['PLEASE OPEN TICKET BEFORE PURCHASE', 'Custom Weapon Skin'],
+    icon: Brush,
+  },
+  {
+    id: 'custom-vehicle-skin',
+    name: 'Custom Vehicle Skin',
+    badge: 'Skin',
+    price: 24.99,
+    features: ['PLEASE OPEN TICKET BEFORE PURCHASE', 'Custom Vehicle Skin'],
+    icon: Brush,
+  },
+  {
+    id: 'custom-sleeping-bag',
+    name: 'Custom Sleeping Bag',
+    badge: 'Skin',
+    price: 14.99,
+    features: ['PLEASE OPEN TICKET BEFORE PURCHASE', 'Custom Sleeping Bag'],
+    icon: Brush,
+  },
+  {
+    id: 'custom-clan-tag',
+    name: 'Custom Clan Tag Color',
+    badge: 'Misc',
+    price: 9.99,
+    features: ['Custom Clan Tag Color', 'Redeemable in-game'],
+    icon: Brush,
+  },
+  {
+    id: 'custom-killfeed-color',
+    name: 'Custom Killfeed Color',
+    badge: 'Misc',
+    price: 9.99,
+    features: ['Custom Killfeed Color', 'Redeemable in-game'],
+    icon: Brush,
   },
 ];
 
 export default function StorePage() {
-  const [activeTab, setActiveTab] = useState<'all' | 'priority' | 'vip' | 'skins'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'priority' | 'vip' | 'skins' | 'misc'>('all');
 
   const filteredProducts = products.filter((p) => {
+    if (activeTab === 'priority') return p.badge === 'Priority';
     if (activeTab === 'vip') return p.badge === 'VIP';
     if (activeTab === 'skins') return p.badge === 'Skin';
-    if (activeTab === 'priority') return p.badge === 'Priority';
+    if (activeTab === 'misc') return p.badge === 'Misc';
     return true;
   });
 
@@ -80,13 +100,13 @@ export default function StorePage() {
         <section className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">Support the Server. Get Perks.</h1>
           <p className="text-neutral-200">
-            Buy VIP or skins. Every purchase helps keep the server running.
+            Buy VIP, priority, or skins. Every purchase helps keep the server running.
           </p>
         </section>
 
         {/* Tabs */}
         <div className="flex justify-center gap-4 mb-8">
-          {['all', 'priority', 'vip', 'skins'].map((tab) => (
+          {['all', 'priority', 'vip', 'skins', 'misc'].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab as any)}
@@ -104,7 +124,12 @@ export default function StorePage() {
         {/* Products */}
         <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProducts.map((p) => (
-            <div key={p.id} className={`rounded-2xl p-6 shadow bg-neutral-900 border ${p.popular ? 'border-brand-light' : 'border-neutral-800'}`}>
+            <div
+              key={p.id}
+              className={`rounded-2xl p-6 shadow bg-neutral-900 border ${
+                p.popular ? 'border-brand-light' : 'border-neutral-800'
+              }`}
+            >
               <p.icon className="h-10 w-10 mb-4 text-brand-light" />
               <h2 className="text-2xl font-bold">{p.name}</h2>
               <p className="text-sm text-neutral-400 mb-2">{p.badge}</p>
@@ -134,7 +159,9 @@ export default function StorePage() {
           <a href="/legal/privacy" className="hover:text-white">Privacy Policy</a>
           <a href="/legal/fulfillment" className="hover:text-white">Fulfillment Policy</a>
         </div>
-        <div className="mt-2 text-xs text-neutral-500">Directive Sirius is not affiliated with Bohemia Interactive.</div>
+        <div className="mt-2 text-xs text-neutral-500">
+          Directive Sirius is not affiliated with Bohemia Interactive.
+        </div>
       </footer>
     </main>
   );
