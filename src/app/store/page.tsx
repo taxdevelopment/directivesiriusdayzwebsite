@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { Zap, Gift } from 'lucide-react';
 
 // Product data
@@ -46,7 +45,6 @@ const products = [
 ];
 
 export default function StorePage() {
-  const router = useRouter();
   const [activeTab, setActiveTab] = useState<'all' | 'priority' | 'gifts'>(
     'all'
   );
