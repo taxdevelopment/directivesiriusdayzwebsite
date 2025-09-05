@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Zap, Gift, Shield } from 'lucide-react';
+import { Zap, Gift } from 'lucide-react';
 
 // Product data
 const products = [
