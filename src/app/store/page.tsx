@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Zap, Gift } from 'lucide-react';
+import { Zap, Palette } from 'lucide-react';
 
 // Product data
 const products = [
@@ -31,27 +31,27 @@ const products = [
     icon: Zap,
   },
   {
-    id: 'gift-prio-1',
-    name: 'Gift: Priority Queue',
-    badge: 'Gift',
-    price: 14.99,
+    id: 'skin-custom-weapon',
+    name: 'Custom Weapon Skin',
+    badge: 'Skin',
+    price: 24.99,
     features: [
-      'Gift card for priority queue',
-      'Redeemable by friend',
-      'No expiry',
+      'Unique custom weapon skin',
+      'Personalized design',
+      'Applied directly to your account',
     ],
-    icon: Gift,
+    icon: Palette,
   },
 ];
 
 export default function StorePage() {
-  const [activeTab, setActiveTab] = useState<'all' | 'priority' | 'gifts'>(
+  const [activeTab, setActiveTab] = useState<'all' | 'priority' | 'skins'>(
     'all'
   );
 
   const filteredProducts = products.filter((p) => {
     if (activeTab === 'priority') return p.name.includes('Priority');
-    if (activeTab === 'gifts') return p.name.includes('Gift');
+    if (activeTab === 'skins') return p.name.includes('Skin');
     return true;
   });
 
@@ -61,14 +61,14 @@ export default function StorePage() {
 
   return (
     <main
-      className="relative min-h-screen bg-cover bg-center text-neutral-100"
+      className="relative min-h-screen w-full flex flex-col bg-cover bg-center text-neutral-100"
       style={{ backgroundImage: "url('/images/hero.jpg')" }}
     >
-      {/* Overlay */}
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/70"></div>
 
-      {/* Page content */}
-      <div className="relative z-10">
+      {/* Content wrapper */}
+      <div className="relative z-10 flex-1">
         {/* Hero */}
         <section className="text-center py-12 px-4">
           <img
@@ -80,14 +80,14 @@ export default function StorePage() {
             Support the Server. Get Perks.
           </h1>
           <p className="text-neutral-300">
-            Buy queue priority or gift it to a friend. Every purchase helps keep
+            Buy queue priority or unlock custom skins. Every purchase helps keep
             the server running.
           </p>
         </section>
 
         {/* Tabs */}
         <div className="flex justify-center gap-4 mb-8">
-          {['all', 'priority', 'gifts'].map((tab) => (
+          {['all', 'priority', 'skins'].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab as any)}
@@ -133,21 +133,22 @@ export default function StorePage() {
         </section>
 
         {/* FAQ + Terms */}
-        <section className="max-w-3xl mx-auto mt-16 px-4 pb-16">
+        <section className="max-w-3xl mx-auto mt-16 px-4 pb-12">
           <h3 className="text-2xl font-bold mb-6">FAQ</h3>
           <div className="space-y-4 text-neutral-300">
             <div>
               <h4 className="font-semibold">How fast is delivery?</h4>
-              <p>Perks are applied instantly after payment.</p>
+              <p>Perks and skins are applied instantly after payment.</p>
             </div>
             <div>
               <h4 className="font-semibold">Do I get a Discord role?</h4>
               <p>Yes, you’ll automatically get a VIP role after purchase.</p>
             </div>
             <div>
-              <h4 className="font-semibold">Can I gift priority?</h4>
+              <h4 className="font-semibold">Can I request a custom design?</h4>
               <p>
-                Yes! Use the gift product and you’ll receive a redeemable code.
+                For skins, yes! You can submit a custom design request after
+                purchase.
               </p>
             </div>
           </div>
