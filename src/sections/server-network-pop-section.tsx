@@ -12,7 +12,7 @@ export interface ServerData {
   players?: { current: number; max: number };
 }
 
-export default function ServerNetworkPopSection() {
+export default function ServerNetworkPage() {
   const [servers, setServers] = useState<ServerData[]>([]);
   const refreshInterval = 30000;
 
@@ -33,55 +33,50 @@ export default function ServerNetworkPopSection() {
   }, [refreshInterval]);
 
   return (
-    <section className="max-w-6xl w-full px-4 py-12">
-      <h2 className="text-3xl font-bold text-white mb-8 text-center">Server Status</h2>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {servers.map((server) => (
-          <div
-            key={server.id}
-            className="rounded-2xl p-6 shadow bg-neutral-900 border border-neutral-800 flex flex-col items-center"
-          >
-            <ServerIcon className="h-10 w-10 mb-4 text-brand-light" />
-            <h3 className="text-2xl font-bold text-center mb-1">{server.name}</h3>
-            <p className="text-sm text-neutral-400 mb-2">
-              {server.host}{server.port ? `:${server.port}` : ''}
-            </p>
-            <div className="flex items-center gap-2 mb-2">
-              {server.online ? (
-                <CheckCircle className="text-green-500 w-6 h-6" />
-              ) : (
-                <XCircle className="text-red-500 w-6 h-6" />
-              )}
-              <span className="text-white font-medium">
-                {server.online ? 'Online' : 'Offline'}
-              </span>
-            </div>
-            <p className="text-sm text-neutral-300 mb-4">
-              Players: {server.players?.current ?? 0} / {server.players?.max ?? 0}
-            </p>
-            <button
-              className={`w-full py-2 rounded-xl text-white font-semibold transition ${
-                server.online ? 'bg-green-600 hover:bg-green-500' : 'bg-red-600 cursor-not-allowed'
-              }`}
-              disabled={!server.online}
+    <main className="relative flex flex-col min-h-screen pt-24 px-4">
+
+      {/* Content */}
+      <div className="relative z-10 max-w-6xl w-full mx-auto py-12 flex flex-col items-center">
+        <h2 className="text-3xl font-bold text-white mb-8 text-center">Server Status</h2>
+
+        <div className="flex flex-wrap justify-center gap-6 w-full">
+          {servers.map((server) => (
+            <div
+              key={server.id}
+              className="rounded-2xl p-6 shadow bg-neutral-900/80 border border-neutral-800 flex flex-col items-center"
             >
-              {server.online ? 'Join Server' : 'Offline'}
-            </button>
-          </div>
-          
-        ))}
-      </div>
-      {/* Footer */}
-      <footer className="relative z-10 mt-12 w-full bg-neutral-900/80 text-neutral-300 text-sm py-6 px-4 text-center rounded-t-xl">
-        <div className="mb-2">{`© 2025 Directive Sirius. All rights reserved.`}</div>
-        <div className="flex justify-center gap-4">
-          <a href="/" className="hover:text-white">Home</a>
-          <a href="/legal/terms" className="hover:text-white">Terms of Service</a>
-          <a href="/legal/privacy" className="hover:text-white">Privacy Policy</a>
-          <a href="/legal/fulfillment" className="hover:text-white">Fulfillment Policy</a>
+              <ServerIcon className="h-10 w-10 mb-4 text-brand-light" />
+              <h3 className="text-2xl font-bold text-center mb-1 text-white">{server.name}</h3>
+              <p className="text-sm text-neutral-400 mb-2">
+                {server.host}{server.port ? `:${server.port}` : ''}
+              </p>
+              <div className="flex items-center gap-2 mb-2">
+                {server.online ? (
+                  <CheckCircle className="text-green-500 w-6 h-6" />
+                ) : (
+                  <XCircle className="text-red-500 w-6 h-6" />
+                )}
+                <span className="text-white font-medium">
+                  {server.online ? 'Online' : 'Offline'}
+                </span>
+              </div>
+              <p className="text-sm text-neutral-300 mb-4">
+                Players: {server.players?.current ?? 0} / {server.players?.max ?? 0}
+              </p>
+              <button
+                className={`w-full py-2 rounded-xl text-white font-semibold transition ${
+                  server.online ? 'bg-green-600 hover:bg-green-500' : 'bg-red-600 cursor-not-allowed'
+                }`}
+                disabled={!server.online}
+              >
+                {server.online ? 'Join Server' : 'Offline'}
+              </button>
+            </div>
+          ))}
         </div>
-        <div className="mt-2 text-xs text-neutral-500">Directive Sirius is not affiliated with Bohemia Interactive.</div>
-      </footer>
-    </section>
+      </div>
+
+      {/* Footer wird automatisch vom RootLayout gerendert */}
+    </main>
   );
 }

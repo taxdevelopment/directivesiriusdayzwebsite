@@ -12,16 +12,16 @@ export default async function LeaderboardPage() {
   if (error) data = {};
 
   return (
-    <main className="relative min-h-screen flex flex-col items-center pt-24 px-4">
+    <main className="relative flex-1 w-full flex flex-col items-center pt-24">
       {/* Full-page background */}
       <div
-        className="fixed inset-0 bg-cover bg-center z-0"
-        style={{ backgroundImage: 'url(/images/bg3.png)' }}
+        className="fixed inset-0 bg-cover bg-center -z-10"
+        style={{ backgroundImage: 'url(/images/hero.jpg)' }}
       />
-      <div className="fixed inset-0 bg-purple-950/50 z-0" />
-      
+      <div className="fixed inset-0 bg-purple-900/30 -z-10" />
+
       {/* Content */}
-      <div className="relative z-10 max-w-6xl w-full px-4 py-12">
+      <div className="relative z-10 w-full max-w-6xl px-4 py-12">
         <LeaderboardSection data={data as { [k: string]: LeaderboardEntry[] }} error={error} />
       </div>
     </main>

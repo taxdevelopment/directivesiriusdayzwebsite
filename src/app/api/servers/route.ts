@@ -3,7 +3,7 @@ import Gamedig from 'gamedig';
 
 const SERVERS = [
   { id: 'server1', name: 'Directive DayZ Server US1', host: 'N/A', port: 2302 },
-  { id: 'server2', name: 'Directive DayZ Server US2', host: 'N/A', port: 2302 },
+  // { id: 'server2', name: 'Directive DayZ Server US2', host: 'N/A', port: 2302 },
 ];
 
 export async function GET() {

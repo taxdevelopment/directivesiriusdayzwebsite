@@ -4,71 +4,14 @@ import { useState } from 'react';
 import { Zap, Sparkle, Brush } from 'lucide-react';
 
 const products = [
-  {
-    id: 'priority-1m',
-    name: 'Priority Queue 1 Month',
-    badge: 'Priority',
-    price: 14.99,
-    features: ['Priority queue access (30 days)', 'Instant delivery'],
-    icon: Zap,
-  },
-  {
-    id: 'priority-3m',
-    name: 'Priority Queue 3 Month',
-    badge: 'Priority',
-    price: 39.99,
-    features: ['Priority queue access (90 days)', 'Instant delivery'],
-    icon: Zap,
-  },
-  {
-    id: 'vip-lifetime',
-    name: 'VIP Lifetime',
-    badge: 'VIP',
-    price: 69.99,
-    features: ['Lifetime VIP access', 'VIP Discord role', 'Instant delivery'],
-    icon: Sparkle,
-    popular: true,
-  },
-  {
-    id: 'custom-weapon-skin',
-    name: 'Custom Weapon Skin',
-    badge: 'Skin',
-    price: 24.99,
-    features: ['PLEASE OPEN TICKET BEFORE PURCHASE', 'Custom Weapon Skin'],
-    icon: Brush,
-  },
-  {
-    id: 'custom-vehicle-skin',
-    name: 'Custom Vehicle Skin',
-    badge: 'Skin',
-    price: 24.99,
-    features: ['PLEASE OPEN TICKET BEFORE PURCHASE', 'Custom Vehicle Skin'],
-    icon: Brush,
-  },
-  {
-    id: 'custom-sleeping-bag',
-    name: 'Custom Sleeping Bag',
-    badge: 'Skin',
-    price: 14.99,
-    features: ['PLEASE OPEN TICKET BEFORE PURCHASE', 'Custom Sleeping Bag'],
-    icon: Brush,
-  },
-  {
-    id: 'custom-clan-tag',
-    name: 'Custom Clan Tag Color',
-    badge: 'Misc',
-    price: 9.99,
-    features: ['Custom Clan Tag Color', 'Redeemable in-game'],
-    icon: Brush,
-  },
-  {
-    id: 'custom-killfeed-color',
-    name: 'Custom Killfeed Color',
-    badge: 'Misc',
-    price: 9.99,
-    features: ['Custom Killfeed Color', 'Redeemable in-game'],
-    icon: Brush,
-  },
+  { id: 'priority-1m', name: 'Priority Queue 1 Month', badge: 'Priority', price: 14.99, features: ['Priority queue access (30 days)', 'Instant delivery'], icon: Zap },
+  { id: 'priority-3m', name: 'Priority Queue 3 Month', badge: 'Priority', price: 39.99, features: ['Priority queue access (90 days)', 'Instant delivery'], icon: Zap },
+  { id: 'vip-lifetime', name: 'VIP Lifetime', badge: 'VIP', price: 69.99, features: ['Lifetime VIP access', 'VIP Discord role', 'Instant delivery'], icon: Sparkle, popular: true },
+  { id: 'custom-weapon-skin', name: 'Custom Weapon Skin', badge: 'Skin', price: 24.99, features: ['PLEASE OPEN TICKET BEFORE PURCHASE', 'Custom Weapon Skin'], icon: Brush },
+  { id: 'custom-vehicle-skin', name: 'Custom Vehicle Skin', badge: 'Skin', price: 24.99, features: ['PLEASE OPEN TICKET BEFORE PURCHASE', 'Custom Vehicle Skin'], icon: Brush },
+  { id: 'custom-sleeping-bag', name: 'Custom Sleeping Bag', badge: 'Skin', price: 14.99, features: ['PLEASE OPEN TICKET BEFORE PURCHASE', 'Custom Sleeping Bag'], icon: Brush },
+  { id: 'custom-clan-tag', name: 'Custom Clan Tag Color', badge: 'Misc', price: 9.99, features: ['Custom Clan Tag Color', 'Redeemable in-game'], icon: Brush },
+  { id: 'custom-killfeed-color', name: 'Custom Killfeed Color', badge: 'Misc', price: 9.99, features: ['Custom Killfeed Color', 'Redeemable in-game'], icon: Brush },
 ];
 
 export default function StorePage() {
@@ -87,16 +30,17 @@ export default function StorePage() {
   };
 
   return (
-    <main className="relative min-h-screen flex flex-col items-center pt-24 px-4">
-      {/* Full-page background */}
+    <div className="relative min-h-screen flex flex-col">
+      {/* Vollflächiger Hintergrund */}
       <div
-        className="fixed inset-0 bg-cover bg-center z-0"
+        className="fixed inset-0 bg-cover bg-center -z-10"
         style={{ backgroundImage: 'url(/images/bg.png)' }}
       />
-      <div className="fixed inset-0 bg-purple-950/50 z-0" />
+      <div className="fixed inset-0 bg-purple-950/50 -z-10" />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-24">
+      {/* Haupt-Content */}
+      <main className="relative z-10 flex-1 max-w-7xl w-full mx-auto px-4 py-24">
+        {/* Überschrift */}
         <section className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">Support the Server. Get Perks.</h1>
           <p className="text-neutral-200">
@@ -105,15 +49,13 @@ export default function StorePage() {
         </section>
 
         {/* Tabs */}
-        <div className="flex justify-center gap-4 mb-8">
+        <div className="flex justify-center gap-4 mb-12 flex-wrap">
           {['all', 'priority', 'vip', 'skins', 'misc'].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab as any)}
               className={`px-4 py-2 rounded-2xl font-medium transition ${
-                activeTab === tab
-                  ? 'bg-brand text-white shadow'
-                  : 'bg-neutral-800 hover:bg-neutral-700'
+                activeTab === tab ? 'bg-brand text-white shadow' : 'bg-neutral-800 hover:bg-neutral-700'
               }`}
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -121,8 +63,8 @@ export default function StorePage() {
           ))}
         </div>
 
-        {/* Products */}
-        <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Produkte */}
+        <section className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {filteredProducts.map((p) => (
             <div
               key={p.id}
@@ -148,21 +90,8 @@ export default function StorePage() {
             </div>
           ))}
         </section>
-      </div>
-
-      {/* Footer */}
-      <footer className="relative z-10 mt-12 w-full bg-neutral-900/80 text-neutral-300 text-sm py-6 px-4 text-center rounded-t-xl">
-        <div className="mb-2">{`© 2025 Directive Sirius. All rights reserved.`}</div>
-        <div className="flex justify-center gap-4">
-          <a href="/" className="hover:text-white">Home</a>
-          <a href="/legal/terms" className="hover:text-white">Terms of Service</a>
-          <a href="/legal/privacy" className="hover:text-white">Privacy Policy</a>
-          <a href="/legal/fulfillment" className="hover:text-white">Fulfillment Policy</a>
-        </div>
-        <div className="mt-2 text-xs text-neutral-500">
-          Directive Sirius is not affiliated with Bohemia Interactive.
-        </div>
-      </footer>
-    </main>
+      </main>
+      {/* KEIN Footer hier, RootLayout rendert ihn automatisch */}
+    </div>
   );
 }

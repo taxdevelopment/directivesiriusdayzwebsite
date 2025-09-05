@@ -76,17 +76,6 @@ const LeaderboardSection = ({ data: _data, error }: {
           {leaderboardData && <LeaderboardTable data={leaderboardData} displayStat={sortBy} />}
           {!leaderboardData && <div className='w-full h-[60lvh]' />}
         </div>}
-        {/* Footer */}
-      <footer className="relative z-10 mt-12 w-full bg-neutral-900/80 text-neutral-300 text-sm py-6 px-4 text-center rounded-t-xl">
-        <div className="mb-2">{`© 2025 Directive Sirius. All rights reserved.`}</div>
-        <div className="flex justify-center gap-4">
-          <a href="/" className="hover:text-white">Home</a>
-          <a href="/legal/terms" className="hover:text-white">Terms of Service</a>
-          <a href="/legal/privacy" className="hover:text-white">Privacy Policy</a>
-          <a href="/legal/fulfillment" className="hover:text-white">Fulfillment Policy</a>
-        </div>
-        <div className="mt-2 text-xs text-neutral-500">Directive Sirius is not affiliated with Bohemia Interactive.</div>
-      </footer>
       </section>
     </div>
     
