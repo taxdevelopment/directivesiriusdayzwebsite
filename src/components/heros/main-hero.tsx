@@ -36,8 +36,8 @@ const MainHero = () => {
             <Image
               src='/images/logos/dayz.png'
               alt='Hero Image'
-              width={75}
-              height={75}
+              width={125}
+              height={125}
               onDragStart={(e) => e.preventDefault()}
             />
           </div>
