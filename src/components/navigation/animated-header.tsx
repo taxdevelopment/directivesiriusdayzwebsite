@@ -99,9 +99,11 @@ export default function Header({
             </a>
 
             {/* Login Button */}
-            <div>
-              <HeaderLoginButton />
-            </div>
+           <nav className="flex items-center gap-4">
+        {config.features.hero && (
+          <HeaderLoginButton />
+        )}
+      </nav>
           </div>
 
         </div>

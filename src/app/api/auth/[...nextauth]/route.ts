@@ -10,9 +10,9 @@ const handler = NextAuth({
   ],
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "/",
-    signOut: "/",
-    error: "/",
+    signIn: "/", // optional
+    signOut: "/", // optional
+    error: "/",   // optional
   },
   callbacks: {
     async redirect({ baseUrl }) {
@@ -22,5 +22,4 @@ const handler = NextAuth({
   },
 });
 
-// Für App-Router muss man explizit GET/POST exportieren
 export { handler as GET, handler as POST };
