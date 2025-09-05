@@ -1,11 +1,9 @@
 'use client';
 
-import Link from 'next/link';
-
 export default function PrivacyPage() {
   return (
     <main
-      className="min-h-screen flex flex-col items-center justify-start py-12 px-4"
+      className="min-h-screen flex flex-col items-center justify-start pt-24 px-4"
       style={{
         backgroundColor: 'rgb(104, 0, 204)',
         backgroundImage: 'url(/images/hero.jpg)',
@@ -18,24 +16,16 @@ export default function PrivacyPage() {
         <h1 className="text-4xl font-bold mb-4 text-white">Privacy Policy</h1>
 
         <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">Information We Collect</h2>
-        <p className="text-white/90 mb-4">
-          We may collect information such as email, payment details, and usage data to provide our services.
-        </p>
+        <p className="text-white/90 mb-4">We may collect email, payment details, and usage data...</p>
 
         <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">How We Use Your Data</h2>
-        <p className="text-white/90 mb-4">
-          Your information is used to process transactions, improve services, and communicate updates.
-        </p>
+        <p className="text-white/90 mb-4">Your information is used to process transactions...</p>
 
         <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">Third-Party Services</h2>
-        <p className="text-white/90 mb-4">
-          We may share minimal information with trusted third-party providers, such as payment processors.
-        </p>
+        <p className="text-white/90 mb-4">We may share minimal information with trusted third-party providers...</p>
 
         <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">Changes</h2>
-        <p className="text-white/90 mb-4">
-          We may update this policy from time to time. Users are encouraged to review it periodically.
-        </p>
+        <p className="text-white/90 mb-4">We may update this policy from time to time...</p>
       </div>
     </main>
   );
