@@ -15,46 +15,60 @@ export default function TermsPage() {
       <div className="max-w-4xl w-full px-8 py-12 flex flex-col items-center justify-center text-center">
         <h1 className="text-4xl font-bold mb-6 text-white">Terms of Service</h1>
 
-        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">Effective Date: 09-11-2024</h2>
-
-        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">1. Acceptance of Terms</h2>
         <p className="text-white/90 mb-4">
-          By accessing and using the services provided by DayZLoaded (hereinafter referred to as 'we,' 'us,' or 'our') through the website dayzloaded.gg (the 'Site'), you agree to comply with and be bound by the following terms and conditions (the 'Terms of Service'). If you do not agree to these terms, please refrain from using our services.
+          Welcome to Directive Sirius! By accessing or using our services, you
+          agree to comply with and be bound by these terms. Please read them
+          carefully.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">2. VIP Services</h2>
+        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">
+          1. Use of Services
+        </h2>
         <p className="text-white/90 mb-4">
-          DayZLoaded offers VIP services that provide users with enhanced features, including expedited access to the DayZ server. By purchasing VIP, you acknowledge and agree to the terms outlined in this document.
+          You may use our services only for lawful purposes. You agree not to
+          engage in any activity that disrupts or interferes with the services.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">3. Payments and Refunds</h2>
+        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">
+          2. Purchases
+        </h2>
         <p className="text-white/90 mb-4">
-          All payments for VIP services are non-refundable. Once a purchase is made, users will receive immediate access to the virtual benefits associated with their VIP status. Refunds will not be issued under any circumstances.
+          All digital products, including VIP access and custom skins, are
+          delivered electronically. Refunds are not provided after successful
+          purchase. Make sure you enter correct information before completing
+          your order.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">4. Access to VIP Benefits</h2>
+        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">
+          3. User Conduct
+        </h2>
         <p className="text-white/90 mb-4">
-          Upon successful payment, users will gain access to VIP benefits, including priority queue status on the DayZ server. It is the user's responsibility to familiarize themselves with the specific benefits associated with their VIP status.
+          You are responsible for your actions on the server. Harassment,
+          cheating, or misuse of the services may result in account suspension
+          or ban.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">5. Termination of VIP Services</h2>
+        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">
+          4. Liability
+        </h2>
         <p className="text-white/90 mb-4">
-          DayZLoaded reserves the right to terminate or suspend VIP services for users who violate our terms or engage in any form of misconduct. Termination of services will be at our discretion, and no refunds will be issued.
+          Directive Sirius is not responsible for any loss, damage, or
+          inconvenience arising from the use of our services. Use them at your
+          own risk.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">6. Changes to Terms of Service</h2>
+        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">
+          5. Changes
+        </h2>
         <p className="text-white/90 mb-4">
-          We reserve the right to modify or update these Terms of Service at any time. Users will be notified of changes, and continued use of our services after such modifications constitutes acceptance of the updated terms.
+          We reserve the right to modify these terms at any time. Updated
+          versions will be posted on our website and will be effective
+          immediately.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">7. Governing Law</h2>
-        <p className="text-white/90 mb-4">
-          These Terms of Service are governed by and construed in accordance with the laws of the United Kingdom. Any disputes arising from or in connection with these terms will be subject to the exclusive jurisdiction of the courts of the United Kingdom.
-        </p>
-
-        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">8. Contact Information</h2>
-        <p className="text-white/90 mb-4">
-          For any inquiries or concerns regarding these Terms of Service, please make a ticket on our Discord or contact us at <a href="mailto:[email protected]" className="text-blue-400">[email protected]</a>.
+        <p className="text-white/90 mt-6">
+          For any questions regarding our Terms of Service, please contact us
+          on Discord.
         </p>
       </div>
     </main>
