@@ -32,12 +32,12 @@ const MainHero = () => {
     >
       <div className='relative py-8 px-4 mx-auto max-w-screen-2xl text-white lg:py-16 z-1'>
         <div className='mb-6 max-w-screen-lg lg:mb-0 flex flex-col items-center text-center'>
-          <div className='h-[75px] w-[75px]'>
+          <div className='h-[375px] w-[375px]'>
             <Image
               src='/images/logos/dayz.png'
               alt='Hero Image'
-              width={125}
-              height={125}
+              width={1380}
+              height={1380}
               onDragStart={(e) => e.preventDefault()}
             />
           </div>

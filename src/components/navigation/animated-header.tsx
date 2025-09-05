@@ -14,9 +14,8 @@ export const defaultNavigation = {
   items: config.navigation?.items ?? [
     { label: "About", href: "/", enabled: true },
     { label: "Store", href: "/store", enabled: true },
-    // { label: "Servers", href: "#servers", enabled: true },
-    // { label: "Leaderboard", href: "#leaderboard", enabled: config.cftools.leaderboard.enabled },
-    // { label: "Contact", href: "#contact", enabled: true },
+    { label: "Leaderboard", href: "/leaderboard", enabled: true },
+    { label: "Server", href: "/server-network", enabled: true },
   ],
 } satisfies { items: NavItem[] };
 
@@ -47,40 +46,67 @@ export default function Header({
         }}
         className={`fixed inset-x-0 flex h-20 shadow backdrop-blur-md duration-300`}
       >
-        <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-8">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-8">
+          {/* Left side: Logo + Navigation */}
           <motion.div
             style={{
-              scale: useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0.9]),
+              scale: useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0.95]),
             }}
-            className="flex origin-left items-center text-xl font-semibold uppercase duration-300"
+            className="flex items-center space-x-6 text-xl font-semibold duration-300"
           >
             <Link href="/" onDragStart={(e) => e.preventDefault()}>
-              <Image src={config.logoURL} alt="Logo" width={80} height={80} priority onDragStart={(e) => e.preventDefault()} />
+              <Image src={config.logoURL} alt="Logo" width={90} height={90} priority onDragStart={(e) => e.preventDefault()} />
             </Link>
+
+            {/* Desktop Navigation */}
+            <motion.nav
+              style={{
+                opacity: useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0]),
+              }}
+              className="hidden sm:flex space-x-6 text-base font-medium text-slate-200 duration-300"
+            >
+              {items.map((item, index) => (
+                <Link key={index} href={item.href} className='font-bold hover:text-purple-500 duration-300'>
+                  {item.label}
+                </Link>
+              ))}
+            </motion.nav>
           </motion.div>
-          <motion.nav
-            style={{
-              opacity: useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0]),
-            }}
-            className="hidden sm:flex space-x-4 text-sm font-medium text-slate-400 duration-300"
-          >
-            {items.map((item, index) => (
-              <Link key={index} href={item.href} className='font-bold hover:text-primary duration-300'>
-                {item.label}
-              </Link>
-            ))}
-          </motion.nav>
+
+          {/* Mobile Navigation */}
           <motion.div className='block sm:hidden duration-300'
             style={{
-              scale: useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0.9]),
+              scale: useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0.95]),
             }}
           >
             <MobileNav items={items} className="bg-none border-none" />
           </motion.div>
-          {/* Login Button */}
-          <HeaderLoginButton />
+
+          {/* Right Side: Discord + Login */}
+          <div className="flex items-center ml-auto space-x-3">
+            {/* Discord Button */}
+            <a
+              href="https://discord.gg/CYx965keUH"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12"
+            >
+              <img
+                src="/images/logos/discord-mark-blurple.svg"
+                alt="Join our Discord"
+                className="w-full h-full"
+              />
+            </a>
+
+            {/* Login Button */}
+            <div>
+              <HeaderLoginButton />
+            </div>
+          </div>
+
         </div>
       </motion.header>
+
       {useGutter && <div className="h-20 w-full" />}
     </div>
   );

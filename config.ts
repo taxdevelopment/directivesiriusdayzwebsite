@@ -9,7 +9,7 @@ export const config: Config & { features: Record<string, boolean> } = {
   features: {
     hero: true,
     aboutSection: true,
-    servers: false,
+    servers: true,
     cftools: false,
     contactSection: false,
     leaderboard: false,
@@ -55,9 +55,27 @@ export const config: Config & { features: Record<string, boolean> } = {
   },
 
   servers: [
-    { name: 'Directive Sirius US1', ipv4: '172.96.164.35', gamePort: 2332, steamQueryPort: 27016, cftoolsApiId: '' },
-    { name: 'Directive Sirius US2', ipv4: '', gamePort: 2302, steamQueryPort: 27016, cftoolsApiId: '40dfcdf1-2e38-4a86-8b36-f02e4c868bf5' },
-    { name: 'Directive Sirius US3', ipv4: '', gamePort: 2402, steamQueryPort: 27017, cftoolsApiId: '16c3c8d1-9e15-4729-a541-8a578288e43d' },
+    {
+      name: 'SKVAD EU1',
+      ipv4: '193.25.252.92',
+      gamePort: 2302,
+      steamQueryPort: 27016,
+      cftoolsApiId: '7732f152-3b6b-4da5-9356-b43ebfef2012',
+    },
+    {
+      name: 'SKVAD EU2',
+      ipv4: '193.25.252.24',
+      gamePort: 2302,
+      steamQueryPort: 27016,
+      cftoolsApiId: '40dfcdf1-2e38-4a86-8b36-f02e4c868bf5',
+    },
+    {
+      name: 'SKVAD EU3',
+      ipv4: '193.25.252.24',
+      gamePort: 2402,
+      steamQueryPort: 27017,
+      cftoolsApiId: '16c3c8d1-9e15-4729-a541-8a578288e43d',
+    },
   ],
 
   cftools: {
