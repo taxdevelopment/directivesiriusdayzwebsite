@@ -71,13 +71,18 @@ export const config: Config & { features: Record<string, boolean> } = {
   },
 
   footer: {
-    trademarkNotice: "Directive Sirius is not affiliated with Bohemia Interactive.",
-    brandingName: "Directive Sirius Community",
-    brandingURL: '/',
-    initialCopyrightYear: 2021,
-    copyrightBrandName: "Directive Sirius",
-    copyrightBrandUrl: '/',
-    links: [{ url: '#', label: 'About' }],
+  trademarkNotice: "Directive Sirius is not affiliated with Bohemia Interactive.",
+  brandingName: "Directive Sirius Community",
+  brandingURL: '/',
+  initialCopyrightYear: 2021,
+  copyrightBrandName: "Directive Sirius",
+  copyrightBrandUrl: '/',
+  links: [
+    { url: '#', label: 'About' }, // bestehender Link bleibt
+    { url: '/legal/terms', label: 'Terms of Service' },
+    { url: '/legal/privacy', label: 'Privacy Policy' },
+    { url: '/legal/fulfillment', label: 'Fulfillment Policy' },
+  ],
   },
 };
 
