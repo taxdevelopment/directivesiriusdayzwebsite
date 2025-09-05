@@ -2,12 +2,13 @@
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen relative">
+    <main className="relative min-h-screen flex flex-col items-center pt-24 px-4">
+      {/* Full-page background */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="fixed inset-0 bg-cover bg-center z-0"
         style={{ backgroundImage: 'url(/images/hero.jpg)' }}
       />
-      <div className="absolute inset-0 bg-purple-900/40" />
+      <div className="fixed inset-0 bg-purple-900/30 z-0" />
 
       <div className="relative max-w-4xl mx-auto px-4 py-24 text-neutral-100">
         <h1 className="text-4xl font-bold mb-6 text-center">Privacy Policy</h1>
