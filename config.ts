@@ -34,7 +34,7 @@ export const config: Config & { features: Record<string, boolean> } = {
         network: { title: "Server Network", description: "Our DayZ servers are hosted by [PROVIDER]." },
         about: {
           title: "About Us",
-          description: "We are a DayZ community...",
+          description: "Directive Sirius is more than just a server, it’s a community bound by challenge, survival, and story. Forged in the Collapse, we rise from the ashes of chaos to build order, camaraderie, and unforgettable experiences. Our world blends harsh survival, tactical PvP, and immersive lore-driven events. Whether you’re building your stronghold, clashing over territories, or uncovering the mysteries of Sirius, you’ll find your place here.",
           rows: {
             1: { title: "Events", description: "Our server hosts a wide variety of events to keep the gameplay exciting and engaging. From server-driven activities like King of the Hill (KOTH) and dynamic airdrops to special events organized by our admins, such as Bandit Camps and community challenges, there’s always something happening to test your skills and bring players together.", image: { url: "/images/about/events.jpg", alt: "Events" } },
             2: { title: "Community", description: "Our community is made up of passionate DayZ players who share a love for survival, teamwork, and adventure. We strive to create a friendly, inclusive, and engaging environment where both new and veteran players can enjoy the game, participate in events, and connect with like-minded survivors.", image: { url: "/images/about/community.jpg", alt: "Community" } },
