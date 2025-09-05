@@ -57,6 +57,11 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        brand: {
+          DEFAULT: "#6B21A8",   // dark purple
+          light: "#9333EA",     // lighter purple
+          dark: "#4C1D95",      // deepest purple
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -86,7 +91,7 @@ const config = {
   ],
 };
 
-// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--slate-200).
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--purple-200).
 function addVariablesForColors({ addBase, theme }) {
   let allColors = flattenColorPalette(theme('colors'));
   let newVars = Object.fromEntries(
