@@ -1,15 +1,18 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function TermsPage() {
   return (
     <main
-      className="min-h-screen flex items-start justify-center py-12 px-4 bg-cover bg-center"
+      className="min-h-screen flex flex-col items-center justify-center py-12 px-4 bg-cover bg-center"
       style={{
         backgroundColor: 'rgb(104, 0, 204)',
         backgroundImage: 'url(/images/hero.jpg)',
       }}
     >
-      <div className="max-w-4xl w-full bg-neutral-800 bg-opacity-90 px-8 py-6 rounded-2xl shadow-lg">
+      {/* Centered Content Box */}
+      <div className="max-w-4xl w-full bg-neutral-900 bg-opacity-90 px-8 py-6 rounded-2xl shadow-lg flex flex-col items-center justify-center text-center mb-12">
         <h1 className="text-4xl font-bold mb-4 text-white">Terms of Service</h1>
         <p className="mb-4 text-neutral-200">
           Welcome to our server store. By accessing or using our services, you agree
@@ -42,6 +45,19 @@ export default function TermsPage() {
           are encouraged to review these terms regularly.
         </p>
       </div>
+
+      {/* Footer */}
+      <footer className="w-full max-w-4xl text-center text-sm text-neutral-300 space-x-6 mb-6">
+        <Link href="/legal/terms" className="hover:text-white">
+          Terms of Service
+        </Link>
+        <Link href="/legal/privacy" className="hover:text-white">
+          Privacy Policy
+        </Link>
+        <Link href="/legal/fulfillment" className="hover:text-white">
+          Fulfillment Policy
+        </Link>
+      </footer>
     </main>
   );
 }
