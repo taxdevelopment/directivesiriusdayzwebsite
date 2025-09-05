@@ -9,7 +9,7 @@ export const config: Config & { features: Record<string, boolean> } = {
   features: {
     hero: true,
     aboutSection: true,
-    servers: true,
+    servers: false,
     cftools: false,
     contactSection: false,
     leaderboard: false,
