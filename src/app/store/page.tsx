@@ -25,16 +25,20 @@ export default function StorePage() {
   };
 
   return (
-    <main
-      className="min-h-screen flex flex-col items-center justify-start pt-24 px-4"
-      style={{
-        backgroundColor: 'rgb(104, 0, 204)',
-        backgroundImage: 'url(/images/hero.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
+      <main className="relative min-h-screen flex flex-col items-center justify-start pt-24 px-4">
+      {/* Background image */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'url(/images/hero.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      {/* Purple overlay */}
+      <div className="absolute inset-0 bg-purple-900/30" />
+
       <section className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-2 text-white">Support the Server. Get Perks.</h1>
         <p className="text-white/90">

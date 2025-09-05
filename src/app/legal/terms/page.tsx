@@ -2,16 +2,20 @@
 
 export default function TermsPage() {
   return (
-    <main
-      className="min-h-screen flex flex-col items-center justify-start pt-24 px-4"
-      style={{
-        backgroundColor: 'rgb(104, 0, 204)',
-        backgroundImage: 'url(/images/hero.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
+    <main className="relative min-h-screen flex flex-col items-center justify-start pt-24 px-4">
+      {/* Background image */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'url(/images/hero.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      {/* Purple overlay */}
+      <div className="absolute inset-0 bg-purple-900/30" />
+
       <div className="max-w-4xl w-full px-8 py-12 flex flex-col items-center justify-center text-center">
         <h1 className="text-4xl font-bold mb-6 text-white">Terms of Service</h1>
 
