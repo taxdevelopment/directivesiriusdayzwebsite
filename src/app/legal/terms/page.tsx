@@ -5,14 +5,14 @@ import Link from 'next/link';
 export default function TermsPage() {
   return (
     <main
-      className="min-h-screen flex flex-col items-center justify-center py-12 px-4 bg-cover bg-center"
+      className="min-h-screen flex flex-col items-center justify-start py-12 px-4 bg-cover bg-center"
       style={{
         backgroundColor: 'rgb(104, 0, 204)',
         backgroundImage: 'url(/images/hero.jpg)',
       }}
     >
-      {/* Centered Content Box */}
-      <div className="max-w-4xl w-full bg-neutral-900 bg-opacity-90 px-8 py-6 rounded-2xl shadow-lg flex flex-col items-center justify-center text-center mb-12">
+      {/* Content Box */}
+      <div className="max-w-4xl w-full bg-neutral-900 bg-opacity-90 px-8 py-12 rounded-2xl shadow-lg flex flex-col items-center justify-center text-center mb-12">
         <h1 className="text-4xl font-bold mb-4 text-white">Terms of Service</h1>
         <p className="mb-4 text-neutral-200">
           Welcome to our server store. By accessing or using our services, you agree

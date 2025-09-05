@@ -1,41 +1,56 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-neutral-900 text-neutral-100 flex items-start justify-center py-16 px-4">
-      <div className="max-w-4xl w-full bg-neutral-800 p-8 rounded-2xl shadow-lg">
-        <h1 className="text-4xl font-bold mb-6">Privacy Policy</h1>
-        <p className="mb-4">
-          We respect your privacy and are committed to protecting your personal data.
-          This policy outlines what information we collect and how it is used.
+    <main
+      className="min-h-screen flex flex-col items-center justify-start py-12 px-4 bg-cover bg-center"
+      style={{
+        backgroundColor: 'rgb(104, 0, 204)',
+        backgroundImage: 'url(/images/hero.jpg)',
+      }}
+    >
+      {/* Content Box */}
+      <div className="max-w-4xl w-full bg-neutral-900 bg-opacity-90 px-8 py-12 rounded-2xl shadow-lg flex flex-col items-center justify-center text-center mb-12">
+        <h1 className="text-4xl font-bold mb-4 text-white">Privacy Policy</h1>
+        <p className="mb-4 text-neutral-200">
+          We respect your privacy. This policy explains what information we collect, how it is used, and your rights.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-6 mb-2">Information Collection</h2>
-        <p className="mb-4">
-          When you make purchases, we collect payment details, your username, and
-          Discord ID if applicable. No sensitive payment info is stored on our servers;
-          we use secure third-party payment processors.
+        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">Information We Collect</h2>
+        <p className="mb-4 text-neutral-200">
+          We may collect information such as email, payment details, and usage data to provide our services.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-6 mb-2">Use of Information</h2>
-        <p className="mb-4">
-          Information is used to deliver perks, manage accounts, communicate about
-          purchases, and ensure security.
+        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">How We Use Your Data</h2>
+        <p className="mb-4 text-neutral-200">
+          Your information is used to process transactions, improve services, and communicate updates.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-6 mb-2">Third-Party Services</h2>
-        <p className="mb-4">
-          Payments and certain features may use third-party services (e.g., Stripe,
-          PayPal). Please review their privacy policies as we are not responsible for
-          their data practices.
+        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">Third-Party Services</h2>
+        <p className="mb-4 text-neutral-200">
+          We may share minimal information with trusted third-party providers, such as payment processors.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-6 mb-2">Changes to Policy</h2>
-        <p className="mb-4">
-          We may update this Privacy Policy from time to time. Users are encouraged to
-          review this page periodically.
+        <h2 className="text-2xl font-semibold mt-4 mb-2 text-white">Changes</h2>
+        <p className="mb-4 text-neutral-200">
+          We may update this policy from time to time. Users are encouraged to review it periodically.
         </p>
       </div>
+
+      {/* Footer */}
+      <footer className="w-full max-w-4xl text-center text-sm text-neutral-300 space-x-6 mb-6">
+        <Link href="/legal/terms" className="hover:text-white">
+          Terms of Service
+        </Link>
+        <Link href="/legal/privacy" className="hover:text-white">
+          Privacy Policy
+        </Link>
+        <Link href="/legal/fulfillment" className="hover:text-white">
+          Fulfillment Policy
+        </Link>
+      </footer>
     </main>
   );
 }
