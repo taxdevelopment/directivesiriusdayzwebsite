@@ -2,8 +2,8 @@
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-neutral-900 text-neutral-100 px-4 py-16">
-      <div className="max-w-4xl mx-auto">
+    <main className="min-h-screen bg-neutral-900 text-neutral-100 flex items-start justify-center py-16 px-4">
+      <div className="max-w-4xl w-full bg-neutral-800 p-8 rounded-2xl shadow-lg">
         <h1 className="text-4xl font-bold mb-6">Terms of Service</h1>
         <p className="mb-4">
           Welcome to our server store. By accessing or using our services, you agree
