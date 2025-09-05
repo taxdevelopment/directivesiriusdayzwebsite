@@ -3,48 +3,14 @@
 import { useState } from 'react';
 import { Zap, Star, Gift } from 'lucide-react';
 
-// Product data
 const products = [
   // Priority Queue
-  {
-    id: 'prio-1',
-    name: 'Priority Queue',
-    badge: '1 Month',
-    price: 14.99,
-    features: ['Priority queue access (30 days)', 'VIP Discord role', 'Instant delivery'],
-    icon: Zap,
-    category: 'priority',
-  },
-  {
-    id: 'prio-3',
-    name: 'Priority Queue',
-    badge: '3 Months',
-    price: 39.99,
-    features: ['Priority queue access (90 days)', 'VIP Discord role', 'Instant delivery'],
-    icon: Zap,
-    popular: true,
-    category: 'priority',
-  },
+  { id: 'prio-1', name: 'Priority Queue', badge: '1 Month', price: 14.99, features: ['Priority queue access (30 days)', 'VIP Discord role', 'Instant delivery'], icon: Zap, category: 'priority' },
+  { id: 'prio-3', name: 'Priority Queue', badge: '3 Months', price: 39.99, features: ['Priority queue access (90 days)', 'VIP Discord role', 'Instant delivery'], icon: Zap, popular: true, category: 'priority' },
   // VIP
-  {
-    id: 'vip-lifetime',
-    name: 'Lifetime VIP',
-    badge: 'VIP',
-    price: 149.99,
-    features: ['Lifetime VIP access', 'VIP Discord role', 'Special perks in-game'],
-    icon: Star,
-    category: 'vip',
-  },
+  { id: 'vip-lifetime', name: 'Lifetime VIP', badge: 'VIP', price: 149.99, features: ['Lifetime VIP access', 'VIP Discord role', 'Special perks in-game'], icon: Star, category: 'vip' },
   // Custom Weapon Skin
-  {
-    id: 'skin-custom-1',
-    name: 'Custom Weapon Skin',
-    badge: 'Skin',
-    price: 24.99,
-    features: ['Custom weapon skin', 'Unique design', 'No expiration'],
-    icon: Gift,
-    category: 'skins',
-  },
+  { id: 'skin-custom-1', name: 'Custom Weapon Skin', badge: 'Skin', price: 24.99, features: ['Custom weapon skin', 'Unique design', 'No expiration'], icon: Gift, category: 'skins' },
 ];
 
 export default function StorePage() {
@@ -63,16 +29,19 @@ export default function StorePage() {
 
   return (
     <main
-      className="min-h-screen flex flex-col items-center justify-start py-12 px-4 bg-cover bg-center"
+      className="min-h-screen flex flex-col items-center justify-start py-12 px-4"
       style={{
         backgroundColor: 'rgb(104, 0, 204)',
         backgroundImage: 'url(/images/hero.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       {/* Hero */}
       <section className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-2 text-white">Support the Server. Get Perks.</h1>
-        <p className="text-neutral-200">
+        <p className="text-white/90">
           Buy queue priority, VIP access, or custom skins. Every purchase helps keep the server running.
         </p>
       </section>
@@ -84,14 +53,10 @@ export default function StorePage() {
             key={tab}
             onClick={() => setActiveTab(tab as any)}
             className={`px-4 py-2 rounded-2xl font-medium transition ${
-              activeTab === tab
-                ? 'bg-brand text-white shadow'
-                : 'bg-neutral-800 hover:bg-neutral-700'
+              activeTab === tab ? 'bg-brand text-white shadow' : 'bg-neutral-800 hover:bg-neutral-700'
             }`}
           >
-            {tab === 'all'
-              ? 'All'
-              : tab.charAt(0).toUpperCase() + tab.slice(1)}
+            {tab === 'all' ? 'All' : tab.charAt(0).toUpperCase() + tab.slice(1)}
           </button>
         ))}
       </div>
