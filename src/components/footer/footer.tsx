@@ -60,12 +60,12 @@ const Footer = () => {
         <div className="mt-2 text-xs text-slate-500 dark:text-slate-400">
           Created with ❤️ by{' '}
           <Link
-            href="https://mirasaki.dev"
+            href="https://discord.com/invite/CYx965keUH"
             className="hover:underline hover:text-white"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Mirasaki Development
+            Directive Sirius
           </Link>
         </div>
 

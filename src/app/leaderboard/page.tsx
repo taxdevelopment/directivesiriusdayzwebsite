@@ -16,9 +16,9 @@ export default async function LeaderboardPage() {
       {/* Full-page background */}
       <div
         className="fixed inset-0 bg-cover bg-center -z-10"
-        style={{ backgroundImage: 'url(/images/hero.jpg)' }}
+        style={{ backgroundImage: 'url(/images/bg3.png)' }}
       />
-      <div className="fixed inset-0 bg-purple-900/30 -z-10" />
+      <div className="fixed inset-0 bg-purple-950/75 -z-10" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-6xl px-4 py-12">
