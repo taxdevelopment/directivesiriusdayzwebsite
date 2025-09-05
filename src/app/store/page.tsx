@@ -16,6 +16,17 @@ const products = [
     icon: Zap,
   },
   {
+    id: 'priority2',
+    name: 'Priority Queue 3 Month',
+    badge: 'Priority',
+    price: 39.99,
+    features: [
+      'Priority queue access (90 days)',
+      'Instant delivery',
+    ],
+    icon: Zap,
+  },
+  {
     id: 'vip-lifetime',
     name: 'Lifetime VIP',
     badge: 'VIP',
@@ -75,7 +86,7 @@ export default function StorePage() {
 
         {/* Tabs */}
         <div className="flex justify-center gap-4 mb-8">
-          {['all', 'vip', 'skins'].map((tab) => (
+          {['all', 'priority', 'vip', 'skins'].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab as any)}
