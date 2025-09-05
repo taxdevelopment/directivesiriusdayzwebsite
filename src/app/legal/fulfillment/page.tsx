@@ -2,13 +2,14 @@
 
 export default function FulfillmentPage() {
   return (
-    <main className="min-h-screen relative">
+    <main className="min-h-screen relative" style={{ backgroundColor: 'rgb(104, 0, 204)' }}>
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: 'url(/images/hero.jpg)' }}
+        aria-label="Hero Image"
       />
-      {/* Purple overlay */}
+      {/* Purple overlay for visibility */}
       <div className="absolute inset-0 bg-purple-900/40" />
 
       <div className="relative max-w-4xl mx-auto px-4 py-24 text-neutral-100">
