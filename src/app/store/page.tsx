@@ -56,10 +56,13 @@ export default function StorePage() {
   };
 
   return (
-    <main className="min-h-screen relative" style={{ backgroundColor: 'rgb(104, 0, 204)' }}>
-      {/* Full background */}
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/hero.jpg)' }} aria-label="Hero Image" />
-      <div className="absolute inset-0 bg-purple-900/40" />
+    <main className="relative min-h-screen flex flex-col items-center pt-24 px-4">
+      {/* Full-page background */}
+      <div
+        className="fixed inset-0 bg-cover bg-center z-0"
+        style={{ backgroundImage: 'url(/images/hero.jpg)' }}
+      />
+      <div className="fixed inset-0 bg-purple-900/30 z-0" />
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-24">
