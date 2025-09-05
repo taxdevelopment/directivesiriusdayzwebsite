@@ -49,7 +49,7 @@ export const config: Config & { features: Record<string, boolean> } = {
 
   hero: {
     title: "Survive the wasteland!",
-    description: "Your actions dictate your rise.",
+    description: "",
     background: { color: 'rgb(104, 0, 204)', image: { url: "/images/hero.jpg", alt: "Hero Image" } },
     cta: { label: "Join our Discord!", href: "https://discord.gg/CYx965keUH" },
   },
