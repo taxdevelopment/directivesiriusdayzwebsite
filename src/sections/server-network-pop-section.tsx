@@ -1,25 +1,24 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { CheckCircle, XCircle, Server as ServerIcon } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Server as ServerIcon, CheckCircle, XCircle } from 'lucide-react';
 
 export interface ServerData {
-  id: string;         // Unique server id
-  name: string;       // Server name
-  host: string;       // IP
-  port?: number;      // Port (optional)
-  online: boolean;    // Online status
+  id: string;
+  name: string;
+  host: string;
+  port?: number;
+  online: boolean;
   players?: { current: number; max: number };
 }
 
 export default function ServerNetworkPopSection() {
   const [servers, setServers] = useState<ServerData[]>([]);
-  const refreshInterval = 30000; // 30 seconds
+  const refreshInterval = 30000;
 
   const fetchServers = async () => {
     try {
-      const res = await fetch('/api/servers'); // This endpoint should return your servers with live online/player info
-      if (!res.ok) throw new Error('Failed to fetch servers');
+      const res = await fetch('/api/servers');
       const data: ServerData[] = await res.json();
       setServers(data);
     } catch (err) {
@@ -28,13 +27,13 @@ export default function ServerNetworkPopSection() {
   };
 
   useEffect(() => {
-    fetchServers(); // Initial fetch
+    fetchServers();
     const interval = setInterval(fetchServers, refreshInterval);
     return () => clearInterval(interval);
-  }, []);
+  }, [refreshInterval]);
 
   return (
-    <section className="relative z-10 max-w-6xl w-full px-4 py-12">
+    <section className="max-w-6xl w-full px-4 py-12">
       <h2 className="text-3xl font-bold text-white mb-8 text-center">Server Status</h2>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {servers.map((server) => (
@@ -47,6 +46,16 @@ export default function ServerNetworkPopSection() {
             <p className="text-sm text-neutral-400 mb-2">
               {server.host}{server.port ? `:${server.port}` : ''}
             </p>
+            <div className="flex items-center gap-2 mb-2">
+              {server.online ? (
+                <CheckCircle className="text-green-500 w-6 h-6" />
+              ) : (
+                <XCircle className="text-red-500 w-6 h-6" />
+              )}
+              <span className="text-white font-medium">
+                {server.online ? 'Online' : 'Offline'}
+              </span>
+            </div>
             <p className="text-sm text-neutral-300 mb-4">
               Players: {server.players?.current ?? 0} / {server.players?.max ?? 0}
             </p>
