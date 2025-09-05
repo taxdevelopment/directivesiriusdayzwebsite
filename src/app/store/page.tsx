@@ -1,80 +1,85 @@
 'use client';
 
 import { useState } from 'react';
-import { Zap, Star, Gift } from 'lucide-react';
+import { Zap, Gift } from 'lucide-react';
 
 const products = [
   {
-    id: 'prio-1',
-    name: 'Priority Queue',
-    badge: '1 Month',
+    id: 'vip-month',
+    name: 'VIP 1 Month',
+    badge: 'VIP',
     price: 14.99,
-    features: ['Priority queue access (30 days)', 'VIP Discord role', 'Instant delivery'],
-    icon: Zap,
-  },
-  {
-    id: 'prio-3',
-    name: 'Priority Queue',
-    badge: '3 Months',
-    price: 39.99,
-    features: ['Priority queue access (90 days)', 'VIP Discord role', 'Instant delivery'],
+    features: [
+      'Priority queue access (30 days)',
+      'VIP Discord role',
+      'Instant delivery',
+    ],
     icon: Zap,
   },
   {
     id: 'vip-lifetime',
     name: 'Lifetime VIP',
-    badge: 'Lifetime',
+    badge: 'VIP',
     price: 149.99,
-    features: ['Lifetime VIP access', 'VIP Discord role', 'Instant delivery'],
-    icon: Star,
+    features: [
+      'Lifetime priority access',
+      'VIP Discord role',
+      'Instant delivery',
+    ],
+    icon: Zap,
+    popular: true,
   },
   {
-    id: 'skin-1',
+    id: 'custom-skin',
     name: 'Custom Weapon Skin',
     badge: 'Skin',
-    price: 19.99,
-    features: ['Custom weapon skin', 'Redeemable in-game', 'No expiry'],
+    price: 9.99,
+    features: [
+      'Redeemable unique weapon skin',
+      'No expiry',
+    ],
     icon: Gift,
   },
 ];
 
 export default function StorePage() {
-  const [activeTab, setActiveTab] = useState<'all' | 'priority' | 'vip' | 'skins'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'vip' | 'skins'>('all');
 
   const filteredProducts = products.filter((p) => {
-    if (activeTab === 'priority') return p.name.includes('Priority');
-    if (activeTab === 'vip') return p.name.includes('VIP');
-    if (activeTab === 'skins') return p.name.includes('Skin');
+    if (activeTab === 'vip') return p.badge === 'VIP';
+    if (activeTab === 'skins') return p.badge === 'Skin';
     return true;
   });
 
-  const handleCheckout = (productId: string) => alert(`Pretend checkout for ${productId}`);
+  const handleCheckout = (productId: string) => {
+    alert(`Pretend checkout for ${productId}. Integrate Stripe/PayPal later.`);
+  };
 
   return (
-    <main className="relative min-h-screen flex flex-col items-center pt-24 px-4">
-      {/* Full-page background */}
-      <div
-        className="fixed inset-0 bg-cover bg-center z-0"
-        style={{ backgroundImage: 'url(/images/hero.jpg)' }}
-      />
-      <div className="fixed inset-0 bg-purple-900/30 z-0" />
+    <main className="min-h-screen relative" style={{ backgroundColor: 'rgb(104, 0, 204)' }}>
+      {/* Full background */}
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/hero.jpg)' }} aria-label="Hero Image" />
+      <div className="absolute inset-0 bg-purple-900/40" />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-6xl flex flex-col items-center">
-        {/* Hero */}
-        <section className="text-center py-12 px-4">
-          <h1 className="text-4xl font-bold mb-2 text-white">Support the Server. Get Perks.</h1>
-          <p className="text-white/90">Buy queue priority, VIP, or custom skins. Every purchase helps keep the server running.</p>
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-24">
+        <section className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-white mb-4">Support the Server. Get Perks.</h1>
+          <p className="text-neutral-200">
+            Buy VIP or skins. Every purchase helps keep the server running.
+          </p>
         </section>
 
         {/* Tabs */}
         <div className="flex justify-center gap-4 mb-8">
-          {['all', 'priority', 'vip', 'skins'].map((tab) => (
+          {['all', 'vip', 'skins'].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab as any)}
               className={`px-4 py-2 rounded-2xl font-medium transition ${
-                activeTab === tab ? 'bg-purple-700 text-white shadow' : 'bg-neutral-800 hover:bg-neutral-700 text-white/90'
+                activeTab === tab
+                  ? 'bg-brand text-white shadow'
+                  : 'bg-neutral-800 hover:bg-neutral-700'
               }`}
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -83,19 +88,38 @@ export default function StorePage() {
         </div>
 
         {/* Products */}
-        <section className="grid gap-6 px-4 sm:grid-cols-2 lg:grid-cols-3 w-full">
+        <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProducts.map((p) => (
-            <div key={p.id} className="rounded-2xl p-6 shadow bg-neutral-900 border border-neutral-800 flex flex-col items-center text-center">
-              <p.icon className="h-10 w-10 mb-4 text-purple-400" />
-              <h2 className="text-2xl font-bold text-white">{p.name}</h2>
-              <p className="text-sm text-white/60 mb-2">{p.badge}</p>
-              <p className="text-3xl font-extrabold mb-4 text-white">${p.price}</p>
-              <ul className="mb-4 space-y-1 text-sm text-white/70">{p.features.map((f) => <li key={f}>• {f}</li>)}</ul>
-              <button onClick={() => handleCheckout(p.id)} className="w-full py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-semibold transition">Buy Now</button>
+            <div key={p.id} className={`rounded-2xl p-6 shadow bg-neutral-900 border ${p.popular ? 'border-brand-light' : 'border-neutral-800'}`}>
+              <p.icon className="h-10 w-10 mb-4 text-brand-light" />
+              <h2 className="text-2xl font-bold">{p.name}</h2>
+              <p className="text-sm text-neutral-400 mb-2">{p.badge}</p>
+              <p className="text-3xl font-extrabold mb-4">${p.price}</p>
+              <ul className="mb-4 space-y-1 text-sm text-neutral-300">
+                {p.features.map((f) => (
+                  <li key={f}>• {f}</li>
+                ))}
+              </ul>
+              <button
+                onClick={() => handleCheckout(p.id)}
+                className="w-full py-2 rounded-xl bg-brand hover:bg-brand-light text-white font-semibold transition"
+              >
+                {p.popular ? 'Most Popular' : 'Buy Now'}
+              </button>
             </div>
           ))}
         </section>
       </div>
+
+      {/* Footer */}
+      <footer className="relative z-10 max-w-6xl mx-auto px-4 py-12 text-center text-neutral-200">
+        <p>Directive Sirius Community &copy; 2021 - {new Date().getFullYear()}</p>
+        <div className="space-x-4 mt-2">
+          <a href="/legal/terms" className="hover:underline">Terms of Service</a>
+          <a href="/legal/privacy" className="hover:underline">Privacy Policy</a>
+          <a href="/legal/fulfillment" className="hover:underline">Fulfillment Policy</a>
+        </div>
+      </footer>
     </main>
   );
 }
