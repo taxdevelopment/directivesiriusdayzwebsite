@@ -17,8 +17,8 @@ export default function PrivacyPage() {
           <div>
             <h2 className="text-2xl font-semibold mb-2">Introduction</h2>
             <p>
-              Welcome to directivesirius.gg! This Privacy Policy outlines how we collect,
-              use, and protect your information when you visit our website directivesirius.gg
+              Welcome to Directive Sirius! This Privacy Policy outlines how we collect,
+              use, and protect your information when you visit our website Directive Sirius
               (referred to as the &quot;Site&quot;) and make use of our services. By accessing
               our website and services, you agree to the terms outlined in this policy.
             </p>

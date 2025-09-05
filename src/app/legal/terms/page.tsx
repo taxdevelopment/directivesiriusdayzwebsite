@@ -19,7 +19,7 @@ export default function TermsPage() {
             <p>
               By accessing and using the services provided by Directive Sirius (hereinafter
               referred to as &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) through the
-              website directivesirius.gg (the &quot;Site&quot;), you agree to comply with and
+              website Directive Sirius (the &quot;Site&quot;), you agree to comply with and
               be bound by the following terms and conditions (the &quot;Terms of Service&quot;).
               If you do not agree to these terms, please refrain from using our services.
             </p>
@@ -83,7 +83,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-semibold mb-2">Contact Information</h2>
             <p>
               For any inquiries or concerns regarding these Terms of Service, please make a
-              ticket on our Discord or contact us at info@directivesirius.gg.
+              ticket on our Discord.
             </p>
           </div>
         </section>
