@@ -74,7 +74,7 @@ export const config: Config & { features: Record<string, boolean> } = {
   trademarkNotice: "Directive Sirius is not affiliated with Bohemia Interactive.",
   brandingName: "Directive Sirius Community",
   brandingURL: '/',
-  initialCopyrightYear: 2021,
+  initialCopyrightYear: 2025,
   copyrightBrandName: "Directive Sirius",
   copyrightBrandUrl: '/',
   links: [
