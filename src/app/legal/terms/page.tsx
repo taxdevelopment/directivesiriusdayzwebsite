@@ -2,51 +2,100 @@
 
 export default function TermsPage() {
   return (
-    <main className="relative min-h-screen flex flex-col items-center justify-start pt-24 px-4">
-      {/* Background */}
+    <main className="min-h-screen relative">
+      {/* Full-page background */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: 'url(/images/hero.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
         }}
       />
-      {/* Purple overlay */}
-      <div className="absolute inset-0 bg-purple-900/30" />
+      {/* Purple overlay for visibility */}
+      <div className="absolute inset-0 bg-purple-900/40" />
 
-      {/* Content */}
-      <div className="relative max-w-4xl w-full px-8 py-12 flex flex-col items-center justify-center text-center text-white">
-        <h1 className="text-4xl font-bold mb-6">Terms of Service</h1>
-        <p className="mb-4">
-          Welcome to Directive Sirius! By accessing or using our services, you agree to comply with and be bound by these terms. Please read them carefully.
-        </p>
+      {/* Content container */}
+      <div className="relative max-w-4xl mx-auto px-4 py-24 text-neutral-100">
+        <h1 className="text-4xl font-bold mb-6 text-center">Terms of Service</h1>
 
-        <h2 className="text-2xl font-semibold mt-4 mb-2">1. Use of Services</h2>
-        <p className="mb-4">
-          You may use our services only for lawful purposes. You agree not to engage in any activity that disrupts or interferes with the services.
-        </p>
+        <section className="space-y-6">
+          <div>
+            <h2 className="text-2xl font-semibold mb-2">Acceptance of Terms</h2>
+            <p>
+              By accessing and using the services provided by Directive Sirius (hereinafter
+              referred to as 'we,' 'us,' or 'our') through the website directivesirius.gg (the
+              'Site'), you agree to comply with and be bound by the following terms and conditions
+              (the 'Terms of Service'). If you do not agree to these terms, please refrain from
+              using our services.
+            </p>
+          </div>
 
-        <h2 className="text-2xl font-semibold mt-4 mb-2">2. Purchases</h2>
-        <p className="mb-4">
-          All digital products, including VIP access and custom skins, are delivered electronically. Refunds are not provided after successful purchase.
-        </p>
+          <div>
+            <h2 className="text-2xl font-semibold mb-2">VIP Services</h2>
+            <p>
+              Directive Sirius offers VIP services that provide users with enhanced features,
+              including expedited access to the DayZ server. By purchasing VIP, you acknowledge
+              and agree to the terms outlined in this document.
+            </p>
+          </div>
 
-        <h2 className="text-2xl font-semibold mt-4 mb-2">3. User Conduct</h2>
-        <p className="mb-4">
-          You are responsible for your actions on the server. Harassment, cheating, or misuse of the services may result in account suspension or ban.
-        </p>
+          <div>
+            <h2 className="text-2xl font-semibold mb-2">Payments and Refunds</h2>
+            <p>
+              All payments for VIP services are non-refundable. Once a purchase is made, users
+              will receive immediate access to the virtual benefits associated with their VIP
+              status. Refunds will not be issued under any circumstances.
+            </p>
+          </div>
 
-        <h2 className="text-2xl font-semibold mt-4 mb-2">4. Liability</h2>
-        <p className="mb-4">
-          Directive Sirius is not responsible for any loss, damage, or inconvenience arising from the use of our services. Use them at your own risk.
-        </p>
+          <div>
+            <h2 className="text-2xl font-semibold mb-2">Access to VIP Benefits</h2>
+            <p>
+              Upon successful payment, users will gain access to VIP benefits, including priority
+              queue status on the DayZ server. It is the user's responsibility to familiarize
+              themselves with the specific benefits associated with their VIP status.
+            </p>
+          </div>
 
-        <h2 className="text-2xl font-semibold mt-4 mb-2">5. Changes</h2>
-        <p className="mb-4">
-          We reserve the right to modify these terms at any time. Updated versions will be posted on our website and will be effective immediately.
-        </p>
+          <div>
+            <h2 className="text-2xl font-semibold mb-2">Termination of VIP Services</h2>
+            <p>
+              Directive Sirius reserves the right to terminate or suspend VIP services for users
+              who violate our terms or engage in any form of misconduct. Termination of services
+              will be at our discretion, and no refunds will be issued.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-semibold mb-2">Changes to Terms of Service</h2>
+            <p>
+              We reserve the right to modify or update these Terms of Service at any time. Users
+              will be notified of changes, and continued use of our services after such
+              modifications constitutes acceptance of the updated terms.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-semibold mb-2">Governing Law</h2>
+            <p>
+              These Terms of Service are governed by and construed in accordance with the laws of
+              the United Kingdom. Any disputes arising from or in connection with these terms will
+              be subject to the exclusive jurisdiction of the courts of the United Kingdom.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-semibold mb-2">Contact Information</h2>
+            <p>
+              For any inquiries or concerns regarding these Terms of Service, please make a ticket
+              on our Discord or contact us at info@directivesirius.gg.
+            </p>
+          </div>
+
+          <p className="mt-6">
+            Thank you for your understanding and choosing Directive Sirius for your virtual
+            products.
+          </p>
+        </section>
       </div>
     </main>
   );

@@ -1,33 +1,32 @@
 'use client';
 
 import { useState } from 'react';
-import { Zap, Gift } from 'lucide-react';
+import { Zap, Star, Gift } from 'lucide-react';
 
-// Product data
 const products = [
   {
     id: 'prio-1',
     name: 'Priority Queue',
     badge: '1 Month',
     price: 14.99,
-    features: [
-      'Priority queue access (30 days)',
-      'VIP Discord role',
-      'Instant delivery',
-    ],
+    features: ['Priority queue access (30 days)', 'VIP Discord role', 'Instant delivery'],
     icon: Zap,
   },
   {
-    id: 'prio-lifetime',
+    id: 'prio-3',
+    name: 'Priority Queue',
+    badge: '3 Months',
+    price: 39.99,
+    features: ['Priority queue access (90 days)', 'VIP Discord role', 'Instant delivery'],
+    icon: Zap,
+  },
+  {
+    id: 'vip-lifetime',
     name: 'Lifetime VIP',
     badge: 'Lifetime',
     price: 149.99,
-    features: [
-      'Lifetime VIP access',
-      'VIP Discord role',
-      'Instant delivery',
-    ],
-    icon: Zap,
+    features: ['Lifetime VIP access', 'VIP Discord role', 'Instant delivery'],
+    icon: Star,
   },
   {
     id: 'skin-1',
@@ -49,33 +48,23 @@ export default function StorePage() {
     return true;
   });
 
-  const handleCheckout = (productId: string) => {
-    alert(`Pretend checkout for ${productId}. Integrate Stripe/PayPal later.`);
-  };
+  const handleCheckout = (productId: string) => alert(`Pretend checkout for ${productId}`);
 
   return (
-    <main className="relative min-h-screen flex flex-col items-center justify-start pt-24 px-4">
-      {/* Background */}
+    <main className="relative min-h-screen flex flex-col items-center pt-24 px-4">
+      {/* Full-page background */}
       <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: 'url(/images/hero.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
+        className="fixed inset-0 bg-cover bg-center z-0"
+        style={{ backgroundImage: 'url(/images/hero.jpg)' }}
       />
-      {/* Purple overlay */}
-      <div className="absolute inset-0 bg-purple-900/30" />
+      <div className="fixed inset-0 bg-purple-900/30 z-0" />
 
       {/* Content */}
-      <div className="relative w-full max-w-6xl flex flex-col items-center">
-        {/* Header */}
+      <div className="relative z-10 w-full max-w-6xl flex flex-col items-center">
+        {/* Hero */}
         <section className="text-center py-12 px-4">
           <h1 className="text-4xl font-bold mb-2 text-white">Support the Server. Get Perks.</h1>
-          <p className="text-white/90">
-            Buy queue priority, VIP, or custom skins. Every purchase helps keep the server running.
-          </p>
+          <p className="text-white/90">Buy queue priority, VIP, or custom skins. Every purchase helps keep the server running.</p>
         </section>
 
         {/* Tabs */}
@@ -96,25 +85,13 @@ export default function StorePage() {
         {/* Products */}
         <section className="grid gap-6 px-4 sm:grid-cols-2 lg:grid-cols-3 w-full">
           {filteredProducts.map((p) => (
-            <div
-              key={p.id}
-              className="rounded-2xl p-6 shadow bg-neutral-900 border border-neutral-800 flex flex-col items-center text-center"
-            >
+            <div key={p.id} className="rounded-2xl p-6 shadow bg-neutral-900 border border-neutral-800 flex flex-col items-center text-center">
               <p.icon className="h-10 w-10 mb-4 text-purple-400" />
               <h2 className="text-2xl font-bold text-white">{p.name}</h2>
               <p className="text-sm text-white/60 mb-2">{p.badge}</p>
               <p className="text-3xl font-extrabold mb-4 text-white">${p.price}</p>
-              <ul className="mb-4 space-y-1 text-sm text-white/70">
-                {p.features.map((f) => (
-                  <li key={f}>• {f}</li>
-                ))}
-              </ul>
-              <button
-                onClick={() => handleCheckout(p.id)}
-                className="w-full py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-semibold transition"
-              >
-                Buy Now
-              </button>
+              <ul className="mb-4 space-y-1 text-sm text-white/70">{p.features.map((f) => <li key={f}>• {f}</li>)}</ul>
+              <button onClick={() => handleCheckout(p.id)} className="w-full py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-semibold transition">Buy Now</button>
             </div>
           ))}
         </section>
